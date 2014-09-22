@@ -22,6 +22,12 @@
 		4F50FC8119C7E06800B5A088 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F50FC6519C7E06800B5A088 /* CoreData.framework */; };
 		4F50FC8919C7E06800B5A088 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F50FC8719C7E06800B5A088 /* InfoPlist.strings */; };
 		4F50FC8B19C7E06800B5A088 /* keytaskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50FC8A19C7E06800B5A088 /* keytaskTests.m */; };
+		4F50FC9D19C91F6000B5A088 /* HYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50FC9B19C91F6000B5A088 /* HYNavigationController.m */; };
+		4F50FCA019C91F7800B5A088 /* HYTabbarModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50FC9F19C91F7800B5A088 /* HYTabbarModel.m */; };
+		4F50FCA319C920AE00B5A088 /* HYTabItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50FCA219C920AE00B5A088 /* HYTabItemModel.m */; };
+		4F50FCA619C92DBF00B5A088 /* HYTabItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50FCA519C92DBF00B5A088 /* HYTabItemView.m */; };
+		4F50FCA919C937EE00B5A088 /* HYTabItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50FCA819C937EE00B5A088 /* HYTabItemController.m */; };
+		4F50FCAC19C96AEB00B5A088 /* HYBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50FCAB19C96AEB00B5A088 /* HYBadgeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,18 @@
 		4F50FC8619C7E06800B5A088 /* keytaskTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "keytaskTests-Info.plist"; sourceTree = "<group>"; };
 		4F50FC8819C7E06800B5A088 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4F50FC8A19C7E06800B5A088 /* keytaskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = keytaskTests.m; sourceTree = "<group>"; };
+		4F50FC9A19C91F6000B5A088 /* HYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNavigationController.h; sourceTree = "<group>"; };
+		4F50FC9B19C91F6000B5A088 /* HYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNavigationController.m; sourceTree = "<group>"; };
+		4F50FC9E19C91F7800B5A088 /* HYTabbarModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTabbarModel.h; sourceTree = "<group>"; };
+		4F50FC9F19C91F7800B5A088 /* HYTabbarModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTabbarModel.m; sourceTree = "<group>"; };
+		4F50FCA119C920AE00B5A088 /* HYTabItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTabItemModel.h; sourceTree = "<group>"; };
+		4F50FCA219C920AE00B5A088 /* HYTabItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTabItemModel.m; sourceTree = "<group>"; };
+		4F50FCA419C92DBF00B5A088 /* HYTabItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTabItemView.h; sourceTree = "<group>"; };
+		4F50FCA519C92DBF00B5A088 /* HYTabItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTabItemView.m; sourceTree = "<group>"; };
+		4F50FCA719C937EE00B5A088 /* HYTabItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTabItemController.h; sourceTree = "<group>"; };
+		4F50FCA819C937EE00B5A088 /* HYTabItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTabItemController.m; sourceTree = "<group>"; };
+		4F50FCAA19C96AEB00B5A088 /* HYBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBadgeView.h; sourceTree = "<group>"; };
+		4F50FCAB19C96AEB00B5A088 /* HYBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBadgeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +133,8 @@
 		4F50FC6719C7E06800B5A088 /* keytask */ = {
 			isa = PBXGroup;
 			children = (
+				4F6AB24119CFC452007DBACD /* MainViewController */,
+				4F50FC9819C91F6000B5A088 /* Common */,
 				4F50FC7019C7E06800B5A088 /* HYAppDelegate.h */,
 				4F50FC7119C7E06800B5A088 /* HYAppDelegate.m */,
 				4F50FC7619C7E06800B5A088 /* Images.xcassets */,
@@ -151,6 +171,48 @@
 				4F50FC8719C7E06800B5A088 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F50FC9819C91F6000B5A088 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4F50FC9919C91F6000B5A088 /* navigation */,
+				4F50FC9C19C91F6000B5A088 /* tabbar */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		4F50FC9919C91F6000B5A088 /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				4F50FC9A19C91F6000B5A088 /* HYNavigationController.h */,
+				4F50FC9B19C91F6000B5A088 /* HYNavigationController.m */,
+			);
+			path = navigation;
+			sourceTree = "<group>";
+		};
+		4F50FC9C19C91F6000B5A088 /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				4F50FC9E19C91F7800B5A088 /* HYTabbarModel.h */,
+				4F50FC9F19C91F7800B5A088 /* HYTabbarModel.m */,
+				4F50FCA119C920AE00B5A088 /* HYTabItemModel.h */,
+				4F50FCA219C920AE00B5A088 /* HYTabItemModel.m */,
+				4F50FCA419C92DBF00B5A088 /* HYTabItemView.h */,
+				4F50FCA519C92DBF00B5A088 /* HYTabItemView.m */,
+				4F50FCA719C937EE00B5A088 /* HYTabItemController.h */,
+				4F50FCA819C937EE00B5A088 /* HYTabItemController.m */,
+				4F50FCAA19C96AEB00B5A088 /* HYBadgeView.h */,
+				4F50FCAB19C96AEB00B5A088 /* HYBadgeView.m */,
+			);
+			path = tabbar;
+			sourceTree = "<group>";
+		};
+		4F6AB24119CFC452007DBACD /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,9 +311,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F50FC9D19C91F6000B5A088 /* HYNavigationController.m in Sources */,
+				4F50FCA319C920AE00B5A088 /* HYTabItemModel.m in Sources */,
+				4F50FCA019C91F7800B5A088 /* HYTabbarModel.m in Sources */,
+				4F50FCA919C937EE00B5A088 /* HYTabItemController.m in Sources */,
 				4F50FC7519C7E06800B5A088 /* keytask.xcdatamodeld in Sources */,
 				4F50FC6E19C7E06800B5A088 /* main.m in Sources */,
 				4F50FC7219C7E06800B5A088 /* HYAppDelegate.m in Sources */,
+				4F50FCAC19C96AEB00B5A088 /* HYBadgeView.m in Sources */,
+				4F50FCA619C92DBF00B5A088 /* HYTabItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +439,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "keytask/keytask-Prefix.pch";
 				INFOPLIST_FILE = "keytask/keytask-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -384,6 +453,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "keytask/keytask-Prefix.pch";
 				INFOPLIST_FILE = "keytask/keytask-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -448,6 +518,7 @@
 				4F50FC9019C7E06800B5A088 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F50FC9119C7E06800B5A088 /* Build configuration list for PBXNativeTarget "keytaskTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +527,7 @@
 				4F50FC9319C7E06800B5A088 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
