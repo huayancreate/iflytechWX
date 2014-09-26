@@ -14,4 +14,13 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
     #import <CoreData/CoreData.h>
+    #import "HYLog.h"
 #endif
+
+#if DEBUG
+#define MCRelease(x) [x release]
+#else
+#define MCRelease(x) [x release], x = nil
+#endif
+
+#define IOS_VERSION [[[UIDevice currentDevice] systemVersion] floatValue]

@@ -13,18 +13,23 @@
 @interface HYTabItemController()
 @property (nonatomic, strong) HYTabItemModel *_model;
 @property (nonatomic, strong) HYTabItemView *_view;
+@property (nonatomic, strong) NSString *_name;
 
 @end
 
 @implementation HYTabItemController
 @synthesize _view;
 @synthesize _model;
+@synthesize _name;
 
-
--(void)initModelAndFrame:(CGRect)size
+-(HYTabItemController *)initWithModel:(HYTabItemModel *) model
 {
-    _view = [[HYTabItemView alloc] initWithFrame:size];
-    _model = [[HYTabItemModel alloc] init];
+    if(_model == nil)
+    {
+        _model = [[HYTabItemModel alloc] init];
+    }
+    _model = model;
+    return self;
 }
 
 -(void)setUnselectBackgroudImage:(UIImage *) image

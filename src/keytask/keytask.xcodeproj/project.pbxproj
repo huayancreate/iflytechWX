@@ -28,6 +28,41 @@
 		4F50FCA619C92DBF00B5A088 /* HYTabItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50FCA519C92DBF00B5A088 /* HYTabItemView.m */; };
 		4F50FCA919C937EE00B5A088 /* HYTabItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50FCA819C937EE00B5A088 /* HYTabItemController.m */; };
 		4F50FCAC19C96AEB00B5A088 /* HYBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F50FCAB19C96AEB00B5A088 /* HYBadgeView.m */; };
+		4F6AB24C19CFC790007DBACD /* HYBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AB24B19CFC790007DBACD /* HYBaseViewController.m */; };
+		4F6AB25619CFD3B8007DBACD /* HYNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AB25519CFD3B8007DBACD /* HYNavigationView.m */; };
+		4F6AB25919CFD510007DBACD /* HYNavigationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AB25819CFD510007DBACD /* HYNavigationModel.m */; };
+		4F6AB25D19D26BB1007DBACD /* HYScreenTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AB25C19D26BB1007DBACD /* HYScreenTools.m */; };
+		4F6AB26B19D270A2007DBACD /* top1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB26219D270A2007DBACD /* top1.png */; };
+		4F6AB26C19D270A2007DBACD /* rightButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB26319D270A2007DBACD /* rightButton.png */; };
+		4F6AB26D19D270A2007DBACD /* leftButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB26419D270A2007DBACD /* leftButton.png */; };
+		4F6AB26E19D270A2007DBACD /* topbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB26519D270A2007DBACD /* topbg.png */; };
+		4F6AB26F19D270A2007DBACD /* top1@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB26719D270A2007DBACD /* top1@2X.png */; };
+		4F6AB27019D270A2007DBACD /* rightButton@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB26819D270A2007DBACD /* rightButton@2X.png */; };
+		4F6AB27119D270A2007DBACD /* leftButton@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB26919D270A2007DBACD /* leftButton@2X.png */; };
+		4F6AB27219D270A2007DBACD /* topbg@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB26A19D270A2007DBACD /* topbg@2X.png */; };
+		4F6AB27619D27A88007DBACD /* HYImageFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AB27519D27A88007DBACD /* HYImageFactory.m */; };
+		4F6AB28D19D299DB007DBACD /* ico1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB27A19D299DB007DBACD /* ico1.png */; };
+		4F6AB28E19D299DB007DBACD /* ico1_hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB27B19D299DB007DBACD /* ico1_hover.png */; };
+		4F6AB28F19D299DB007DBACD /* ico2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB27C19D299DB007DBACD /* ico2.png */; };
+		4F6AB29019D299DB007DBACD /* ico2_hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB27D19D299DB007DBACD /* ico2_hover.png */; };
+		4F6AB29119D299DB007DBACD /* ico3.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB27E19D299DB007DBACD /* ico3.png */; };
+		4F6AB29219D299DB007DBACD /* ico3_hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB27F19D299DB007DBACD /* ico3_hover.png */; };
+		4F6AB29319D299DB007DBACD /* ico4.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB28019D299DB007DBACD /* ico4.png */; };
+		4F6AB29419D299DB007DBACD /* ico4_hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB28119D299DB007DBACD /* ico4_hover.png */; };
+		4F6AB29619D299DB007DBACD /* ico1@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB28419D299DB007DBACD /* ico1@2X.png */; };
+		4F6AB29719D299DB007DBACD /* ico1_hover@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB28519D299DB007DBACD /* ico1_hover@2X.png */; };
+		4F6AB29819D299DB007DBACD /* ico2@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB28619D299DB007DBACD /* ico2@2X.png */; };
+		4F6AB29919D299DB007DBACD /* ico2_hover@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB28719D299DB007DBACD /* ico2_hover@2X.png */; };
+		4F6AB29A19D299DB007DBACD /* ico3@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB28819D299DB007DBACD /* ico3@2X.png */; };
+		4F6AB29B19D299DB007DBACD /* ico3_hover@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB28919D299DB007DBACD /* ico3_hover@2X.png */; };
+		4F6AB29C19D299DB007DBACD /* ico4@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB28A19D299DB007DBACD /* ico4@2X.png */; };
+		4F6AB29D19D299DB007DBACD /* ico4_hover@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB28B19D299DB007DBACD /* ico4_hover@2X.png */; };
+		4F6AB2A019D29C1D007DBACD /* HYTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AB29F19D29C1D007DBACD /* HYTabbarController.m */; };
+		4F6AB2A319D2A3AC007DBACD /* HYTabbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AB2A219D2A3AC007DBACD /* HYTabbarView.m */; };
+		4F6AB2A519D2A8BB007DBACD /* tabbarbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB2A419D2A8BB007DBACD /* tabbarbg.png */; };
+		4F6AB2A719D2A8C0007DBACD /* tabbarbg@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AB2A619D2A8C0007DBACD /* tabbarbg@2X.png */; };
+		4F6AB2AC19D2B6C8007DBACD /* HYMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AB2AB19D2B6C8007DBACD /* HYMainViewController.m */; };
+		4F6AB2B019D2B754007DBACD /* HYLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F6AB2AF19D2B754007DBACD /* HYLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +106,52 @@
 		4F50FCA819C937EE00B5A088 /* HYTabItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTabItemController.m; sourceTree = "<group>"; };
 		4F50FCAA19C96AEB00B5A088 /* HYBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBadgeView.h; sourceTree = "<group>"; };
 		4F50FCAB19C96AEB00B5A088 /* HYBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBadgeView.m; sourceTree = "<group>"; };
+		4F6AB24A19CFC790007DBACD /* HYBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBaseViewController.h; sourceTree = "<group>"; };
+		4F6AB24B19CFC790007DBACD /* HYBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBaseViewController.m; sourceTree = "<group>"; };
+		4F6AB25319CFCC0E007DBACD /* HYLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HYLog.h; sourceTree = "<group>"; };
+		4F6AB25419CFD3B8007DBACD /* HYNavigationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNavigationView.h; sourceTree = "<group>"; };
+		4F6AB25519CFD3B8007DBACD /* HYNavigationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNavigationView.m; sourceTree = "<group>"; };
+		4F6AB25719CFD510007DBACD /* HYNavigationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYNavigationModel.h; sourceTree = "<group>"; };
+		4F6AB25819CFD510007DBACD /* HYNavigationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYNavigationModel.m; sourceTree = "<group>"; };
+		4F6AB25B19D26BB1007DBACD /* HYScreenTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYScreenTools.h; sourceTree = "<group>"; };
+		4F6AB25C19D26BB1007DBACD /* HYScreenTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYScreenTools.m; sourceTree = "<group>"; };
+		4F6AB26219D270A2007DBACD /* top1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = top1.png; sourceTree = "<group>"; };
+		4F6AB26319D270A2007DBACD /* rightButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightButton.png; sourceTree = "<group>"; };
+		4F6AB26419D270A2007DBACD /* leftButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftButton.png; sourceTree = "<group>"; };
+		4F6AB26519D270A2007DBACD /* topbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = topbg.png; sourceTree = "<group>"; };
+		4F6AB26719D270A2007DBACD /* top1@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "top1@2X.png"; sourceTree = "<group>"; };
+		4F6AB26819D270A2007DBACD /* rightButton@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightButton@2X.png"; sourceTree = "<group>"; };
+		4F6AB26919D270A2007DBACD /* leftButton@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "leftButton@2X.png"; sourceTree = "<group>"; };
+		4F6AB26A19D270A2007DBACD /* topbg@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbg@2X.png"; sourceTree = "<group>"; };
+		4F6AB27319D277E8007DBACD /* HYConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYConstants.h; sourceTree = "<group>"; };
+		4F6AB27419D27A88007DBACD /* HYImageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYImageFactory.h; sourceTree = "<group>"; };
+		4F6AB27519D27A88007DBACD /* HYImageFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYImageFactory.m; sourceTree = "<group>"; };
+		4F6AB27A19D299DB007DBACD /* ico1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico1.png; sourceTree = "<group>"; };
+		4F6AB27B19D299DB007DBACD /* ico1_hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico1_hover.png; sourceTree = "<group>"; };
+		4F6AB27C19D299DB007DBACD /* ico2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico2.png; sourceTree = "<group>"; };
+		4F6AB27D19D299DB007DBACD /* ico2_hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico2_hover.png; sourceTree = "<group>"; };
+		4F6AB27E19D299DB007DBACD /* ico3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico3.png; sourceTree = "<group>"; };
+		4F6AB27F19D299DB007DBACD /* ico3_hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico3_hover.png; sourceTree = "<group>"; };
+		4F6AB28019D299DB007DBACD /* ico4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico4.png; sourceTree = "<group>"; };
+		4F6AB28119D299DB007DBACD /* ico4_hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ico4_hover.png; sourceTree = "<group>"; };
+		4F6AB28419D299DB007DBACD /* ico1@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico1@2X.png"; sourceTree = "<group>"; };
+		4F6AB28519D299DB007DBACD /* ico1_hover@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico1_hover@2X.png"; sourceTree = "<group>"; };
+		4F6AB28619D299DB007DBACD /* ico2@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico2@2X.png"; sourceTree = "<group>"; };
+		4F6AB28719D299DB007DBACD /* ico2_hover@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico2_hover@2X.png"; sourceTree = "<group>"; };
+		4F6AB28819D299DB007DBACD /* ico3@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico3@2X.png"; sourceTree = "<group>"; };
+		4F6AB28919D299DB007DBACD /* ico3_hover@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico3_hover@2X.png"; sourceTree = "<group>"; };
+		4F6AB28A19D299DB007DBACD /* ico4@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico4@2X.png"; sourceTree = "<group>"; };
+		4F6AB28B19D299DB007DBACD /* ico4_hover@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ico4_hover@2X.png"; sourceTree = "<group>"; };
+		4F6AB29E19D29C1D007DBACD /* HYTabbarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTabbarController.h; sourceTree = "<group>"; };
+		4F6AB29F19D29C1D007DBACD /* HYTabbarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTabbarController.m; sourceTree = "<group>"; };
+		4F6AB2A119D2A3AC007DBACD /* HYTabbarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTabbarView.h; sourceTree = "<group>"; };
+		4F6AB2A219D2A3AC007DBACD /* HYTabbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTabbarView.m; sourceTree = "<group>"; };
+		4F6AB2A419D2A8BB007DBACD /* tabbarbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabbarbg.png; sourceTree = "<group>"; };
+		4F6AB2A619D2A8C0007DBACD /* tabbarbg@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbarbg@2X.png"; sourceTree = "<group>"; };
+		4F6AB2AA19D2B6C8007DBACD /* HYMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYMainViewController.h; sourceTree = "<group>"; };
+		4F6AB2AB19D2B6C8007DBACD /* HYMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYMainViewController.m; sourceTree = "<group>"; };
+		4F6AB2AE19D2B754007DBACD /* HYLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYLoginViewController.h; sourceTree = "<group>"; };
+		4F6AB2AF19D2B754007DBACD /* HYLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +214,9 @@
 		4F50FC6719C7E06800B5A088 /* keytask */ = {
 			isa = PBXGroup;
 			children = (
-				4F6AB24119CFC452007DBACD /* MainViewController */,
+				4F6AB2A819D2B6B3007DBACD /* ControllerView */,
+				4F6AB25E19D27035007DBACD /* Resource */,
+				4F6AB25A19CFEE43007DBACD /* Utity */,
 				4F50FC9819C91F6000B5A088 /* Common */,
 				4F50FC7019C7E06800B5A088 /* HYAppDelegate.h */,
 				4F50FC7119C7E06800B5A088 /* HYAppDelegate.m */,
@@ -176,6 +259,8 @@
 		4F50FC9819C91F6000B5A088 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				4F6AB25219CFCBFF007DBACD /* log */,
+				4F6AB24919CFC790007DBACD /* baseview */,
 				4F50FC9919C91F6000B5A088 /* navigation */,
 				4F50FC9C19C91F6000B5A088 /* tabbar */,
 			);
@@ -187,6 +272,10 @@
 			children = (
 				4F50FC9A19C91F6000B5A088 /* HYNavigationController.h */,
 				4F50FC9B19C91F6000B5A088 /* HYNavigationController.m */,
+				4F6AB25419CFD3B8007DBACD /* HYNavigationView.h */,
+				4F6AB25519CFD3B8007DBACD /* HYNavigationView.m */,
+				4F6AB25719CFD510007DBACD /* HYNavigationModel.h */,
+				4F6AB25819CFD510007DBACD /* HYNavigationModel.m */,
 			);
 			path = navigation;
 			sourceTree = "<group>";
@@ -204,15 +293,157 @@
 				4F50FCA819C937EE00B5A088 /* HYTabItemController.m */,
 				4F50FCAA19C96AEB00B5A088 /* HYBadgeView.h */,
 				4F50FCAB19C96AEB00B5A088 /* HYBadgeView.m */,
+				4F6AB29E19D29C1D007DBACD /* HYTabbarController.h */,
+				4F6AB29F19D29C1D007DBACD /* HYTabbarController.m */,
+				4F6AB2A119D2A3AC007DBACD /* HYTabbarView.h */,
+				4F6AB2A219D2A3AC007DBACD /* HYTabbarView.m */,
 			);
 			path = tabbar;
 			sourceTree = "<group>";
 		};
-		4F6AB24119CFC452007DBACD /* MainViewController */ = {
+		4F6AB24919CFC790007DBACD /* baseview */ = {
 			isa = PBXGroup;
 			children = (
+				4F6AB24A19CFC790007DBACD /* HYBaseViewController.h */,
+				4F6AB24B19CFC790007DBACD /* HYBaseViewController.m */,
+			);
+			path = baseview;
+			sourceTree = "<group>";
+		};
+		4F6AB25219CFCBFF007DBACD /* log */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB25319CFCC0E007DBACD /* HYLog.h */,
+			);
+			path = log;
+			sourceTree = "<group>";
+		};
+		4F6AB25A19CFEE43007DBACD /* Utity */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB25B19D26BB1007DBACD /* HYScreenTools.h */,
+				4F6AB25C19D26BB1007DBACD /* HYScreenTools.m */,
+				4F6AB27319D277E8007DBACD /* HYConstants.h */,
+				4F6AB27419D27A88007DBACD /* HYImageFactory.h */,
+				4F6AB27519D27A88007DBACD /* HYImageFactory.m */,
+			);
+			path = Utity;
+			sourceTree = "<group>";
+		};
+		4F6AB25E19D27035007DBACD /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB25F19D27050007DBACD /* images */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4F6AB25F19D27050007DBACD /* images */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB27719D299DB007DBACD /* tabbar */,
+				4F6AB26019D270A2007DBACD /* navigation */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		4F6AB26019D270A2007DBACD /* navigation */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB26119D270A2007DBACD /* 320X480 */,
+				4F6AB26619D270A2007DBACD /* 640X960 */,
+			);
+			path = navigation;
+			sourceTree = "<group>";
+		};
+		4F6AB26119D270A2007DBACD /* 320X480 */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB26219D270A2007DBACD /* top1.png */,
+				4F6AB26319D270A2007DBACD /* rightButton.png */,
+				4F6AB26419D270A2007DBACD /* leftButton.png */,
+				4F6AB26519D270A2007DBACD /* topbg.png */,
+			);
+			path = 320X480;
+			sourceTree = "<group>";
+		};
+		4F6AB26619D270A2007DBACD /* 640X960 */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB26719D270A2007DBACD /* top1@2X.png */,
+				4F6AB26819D270A2007DBACD /* rightButton@2X.png */,
+				4F6AB26919D270A2007DBACD /* leftButton@2X.png */,
+				4F6AB26A19D270A2007DBACD /* topbg@2X.png */,
+			);
+			path = 640X960;
+			sourceTree = "<group>";
+		};
+		4F6AB27719D299DB007DBACD /* tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB27819D299DB007DBACD /* 320X480 */,
+				4F6AB28219D299DB007DBACD /* 640X960 */,
+			);
+			path = tabbar;
+			sourceTree = "<group>";
+		};
+		4F6AB27819D299DB007DBACD /* 320X480 */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB2A419D2A8BB007DBACD /* tabbarbg.png */,
+				4F6AB27A19D299DB007DBACD /* ico1.png */,
+				4F6AB27B19D299DB007DBACD /* ico1_hover.png */,
+				4F6AB27C19D299DB007DBACD /* ico2.png */,
+				4F6AB27D19D299DB007DBACD /* ico2_hover.png */,
+				4F6AB27E19D299DB007DBACD /* ico3.png */,
+				4F6AB27F19D299DB007DBACD /* ico3_hover.png */,
+				4F6AB28019D299DB007DBACD /* ico4.png */,
+				4F6AB28119D299DB007DBACD /* ico4_hover.png */,
+			);
+			path = 320X480;
+			sourceTree = "<group>";
+		};
+		4F6AB28219D299DB007DBACD /* 640X960 */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB2A619D2A8C0007DBACD /* tabbarbg@2X.png */,
+				4F6AB28419D299DB007DBACD /* ico1@2X.png */,
+				4F6AB28519D299DB007DBACD /* ico1_hover@2X.png */,
+				4F6AB28619D299DB007DBACD /* ico2@2X.png */,
+				4F6AB28719D299DB007DBACD /* ico2_hover@2X.png */,
+				4F6AB28819D299DB007DBACD /* ico3@2X.png */,
+				4F6AB28919D299DB007DBACD /* ico3_hover@2X.png */,
+				4F6AB28A19D299DB007DBACD /* ico4@2X.png */,
+				4F6AB28B19D299DB007DBACD /* ico4_hover@2X.png */,
+			);
+			path = 640X960;
+			sourceTree = "<group>";
+		};
+		4F6AB2A819D2B6B3007DBACD /* ControllerView */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB2AD19D2B6ED007DBACD /* LoginViewController */,
+				4F6AB2A919D2B6C8007DBACD /* MainViewController */,
+			);
+			path = ControllerView;
+			sourceTree = "<group>";
+		};
+		4F6AB2A919D2B6C8007DBACD /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB2AA19D2B6C8007DBACD /* HYMainViewController.h */,
+				4F6AB2AB19D2B6C8007DBACD /* HYMainViewController.m */,
 			);
 			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		4F6AB2AD19D2B6ED007DBACD /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4F6AB2AE19D2B754007DBACD /* HYLoginViewController.h */,
+				4F6AB2AF19D2B754007DBACD /* HYLoginViewController.m */,
+			);
+			path = LoginViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,8 +522,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6AB26C19D270A2007DBACD /* rightButton.png in Resources */,
+				4F6AB2A519D2A8BB007DBACD /* tabbarbg.png in Resources */,
+				4F6AB29819D299DB007DBACD /* ico2@2X.png in Resources */,
+				4F6AB29A19D299DB007DBACD /* ico3@2X.png in Resources */,
+				4F6AB29319D299DB007DBACD /* ico4.png in Resources */,
+				4F6AB26D19D270A2007DBACD /* leftButton.png in Resources */,
+				4F6AB26F19D270A2007DBACD /* top1@2X.png in Resources */,
+				4F6AB29B19D299DB007DBACD /* ico3_hover@2X.png in Resources */,
+				4F6AB29919D299DB007DBACD /* ico2_hover@2X.png in Resources */,
+				4F6AB27219D270A2007DBACD /* topbg@2X.png in Resources */,
+				4F6AB29019D299DB007DBACD /* ico2_hover.png in Resources */,
+				4F6AB29419D299DB007DBACD /* ico4_hover.png in Resources */,
+				4F6AB26E19D270A2007DBACD /* topbg.png in Resources */,
+				4F6AB28F19D299DB007DBACD /* ico2.png in Resources */,
 				4F50FC6C19C7E06800B5A088 /* InfoPlist.strings in Resources */,
+				4F6AB29119D299DB007DBACD /* ico3.png in Resources */,
+				4F6AB27019D270A2007DBACD /* rightButton@2X.png in Resources */,
+				4F6AB29719D299DB007DBACD /* ico1_hover@2X.png in Resources */,
+				4F6AB29C19D299DB007DBACD /* ico4@2X.png in Resources */,
+				4F6AB27119D270A2007DBACD /* leftButton@2X.png in Resources */,
+				4F6AB29D19D299DB007DBACD /* ico4_hover@2X.png in Resources */,
+				4F6AB28E19D299DB007DBACD /* ico1_hover.png in Resources */,
+				4F6AB29619D299DB007DBACD /* ico1@2X.png in Resources */,
+				4F6AB29219D299DB007DBACD /* ico3_hover.png in Resources */,
 				4F50FC7719C7E06800B5A088 /* Images.xcassets in Resources */,
+				4F6AB2A719D2A8C0007DBACD /* tabbarbg@2X.png in Resources */,
+				4F6AB26B19D270A2007DBACD /* top1.png in Resources */,
+				4F6AB28D19D299DB007DBACD /* ico1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,15 +568,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F6AB2A019D29C1D007DBACD /* HYTabbarController.m in Sources */,
 				4F50FC9D19C91F6000B5A088 /* HYNavigationController.m in Sources */,
+				4F6AB25619CFD3B8007DBACD /* HYNavigationView.m in Sources */,
+				4F6AB25D19D26BB1007DBACD /* HYScreenTools.m in Sources */,
+				4F6AB2AC19D2B6C8007DBACD /* HYMainViewController.m in Sources */,
 				4F50FCA319C920AE00B5A088 /* HYTabItemModel.m in Sources */,
 				4F50FCA019C91F7800B5A088 /* HYTabbarModel.m in Sources */,
 				4F50FCA919C937EE00B5A088 /* HYTabItemController.m in Sources */,
 				4F50FC7519C7E06800B5A088 /* keytask.xcdatamodeld in Sources */,
 				4F50FC6E19C7E06800B5A088 /* main.m in Sources */,
+				4F6AB27619D27A88007DBACD /* HYImageFactory.m in Sources */,
+				4F6AB24C19CFC790007DBACD /* HYBaseViewController.m in Sources */,
+				4F6AB2A319D2A3AC007DBACD /* HYTabbarView.m in Sources */,
+				4F6AB25919CFD510007DBACD /* HYNavigationModel.m in Sources */,
 				4F50FC7219C7E06800B5A088 /* HYAppDelegate.m in Sources */,
 				4F50FCAC19C96AEB00B5A088 /* HYBadgeView.m in Sources */,
 				4F50FCA619C92DBF00B5A088 /* HYTabItemView.m in Sources */,
+				4F6AB2B019D2B754007DBACD /* HYLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

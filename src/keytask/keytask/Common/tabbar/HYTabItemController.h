@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HYTabItemModel.h"
 
 @interface HYTabItemController : NSObject
 
--(void)initModelAndFrame:(CGRect)size ;
+-(HYTabItemController *)initWithModel:(HYTabItemModel *) model;
 
 -(void)setUnselectBackgroudImage:(UIImage *) image;
 

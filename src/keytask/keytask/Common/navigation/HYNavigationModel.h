@@ -1,0 +1,18 @@
+//
+//  HYNavigationModel.h
+//  keytask
+//
+//  Created by 许 玮 on 14-9-22.
+//  Copyright (c) 2014年 科大讯飞. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface HYNavigationModel : NSObject
+
+@property NSString *_centerTittle;
+@property (nonatomic, strong) UIImage *_backgroudImg;
+@property (nonatomic, strong) UIImage *_rightButtonImg;
+@property (nonatomic, strong) UIImage *_leftButtonImg;
+
+@end
