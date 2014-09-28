@@ -7,12 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HYBaseViewController.h"
 
+@class HYBaseViewController;
 @interface HYNavigationModel : NSObject
 
 @property NSString *_centerTittle;
 @property (nonatomic, strong) UIImage *_backgroudImg;
 @property (nonatomic, strong) UIImage *_rightButtonImg;
 @property (nonatomic, strong) UIImage *_leftButtonImg;
+-(void)push:(HYBaseViewController *) controller;
+-(void)pop:(HYBaseViewController *) controller;
 
 @end

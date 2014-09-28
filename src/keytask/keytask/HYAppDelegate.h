@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HYNavigationController.h"
 
 @interface HYAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+-(HYNavigationController *)getNavigation;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;

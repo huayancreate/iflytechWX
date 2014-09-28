@@ -11,26 +11,64 @@
 #import "HYNavigationModel.h"
 #import "HYImageFactory.h"
 #import "HYConstants.h"
+#import "HYScreenTools.h"
 
 @interface HYLoginViewController ()
-@property (nonatomic, strong) HYNavigationController *_nav;
-@property (nonatomic, strong) HYNavigationModel *_navModel;
+@property float _statusHeight;
+@property float _originX;
+@property float _originY;
 
 @end
 
 @implementation HYLoginViewController
-@synthesize _nav;
-@synthesize _navModel;
-
+@synthesize _statusHeight;
+@synthesize _originX;
+@synthesize _originY;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [self initNavigationBar];
+        [[[self getNavigationController] getView] setHidden:YES];
+        
+        [self initControl];
     }
     return self;
+}
+
+-(void)initControl
+{
+    _statusHeight = [HYScreenTools getStatusHeight];
+    _originX = [HYScreenTools getScreenWidth];
+    _originY = [HYScreenTools getScreenHeight];
+    UIImageView *bgImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0 + _statusHeight, _originX, _originY)];
+    
+    [bgImgView setImage:[HYImageFactory GetImageByName:@"login_bg" AndType:PNG]];
+    
+    [self.view addSubview:bgImgView];
+    
+    UIImageView *loginBoxImgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 190 + _statusHeight, (_originX - 20), 93)];
+    
+    [loginBoxImgView setImage:[HYImageFactory GetImageByName:@"loginbox" AndType:PNG]];
+    
+    [bgImgView addSubview:loginBoxImgView];
+    
+    UIButton *loginBtn = [[UIButton alloc] initWithFrame:CGRectMake(((_originX - 294)/2), 315 + _statusHeight, 294, 40)];
+    
+    
+    [loginBtn setBackgroundImage:[HYImageFactory GetImageByName:@"loginbtn_hover" AndType:PNG] forState:UIControlStateNormal];
+    
+    [loginBtn setBackgroundImage:[HYImageFactory GetImageByName:@"loginbtn" AndType:PNG] forState:UIControlStateSelected | UIControlStateHighlighted];
+    
+    [self.view addSubview:loginBtn];
+    
+    
+    //添加textView
+//    UITextView *usernameTextView = [[UITextView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)]
+    
+    
+    
 }
 
 - (void)viewDidLoad
@@ -45,25 +83,6 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)initNavigationBar
-{
-    _navModel = [[HYNavigationModel alloc] init];
-    _navModel._backgroudImg = [HYImageFactory GetImageByName:@"topbg" AndType:PNG];
-    
-    _nav = [[HYNavigationController alloc] initWithModel:_navModel];
-    
-    [_nav setBackgroudImageByModel];
-    
-    _nav 
-    
-    //    [nav setCenterTittle:@"我是测试的"];
-    [_nav initLeftButton];
-    [_nav initRightButton];
-    
-    [self.view addSubview:[_nav getView]];
-    
-    [[_nav getView] setHidden:YES];
-    
-}
+
 
 @end

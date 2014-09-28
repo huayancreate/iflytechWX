@@ -125,6 +125,19 @@
     [_rightButton addTarget:target action:action forControlEvents:controlEvents];
 }
 
+-(void)pushController:(HYBaseViewController *)controller
+{
+    [_model push:controller];
+}
+
+-(void)show
+{
+
+}
+
+
+
+
 -(void)popToParentView
 {
 

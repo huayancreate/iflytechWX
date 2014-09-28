@@ -8,11 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import "HYNavigationModel.h"
+#import "HYBaseViewController.h"
 
+@class HYNavigationModel;
+@class HYBaseViewController;
 @interface HYNavigationController : NSObject
 
 -(HYNavigationController *)initWithModel:(HYNavigationModel *)model;
 -(void)setBackgroudImageByModel;
+-(void)pushController:(HYBaseViewController *)controller;
+-(void)show;
 
 
 -(UIView *)getView;

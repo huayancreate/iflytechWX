@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F4576F319D7BDF5004FA598 /* HYHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4576F219D7BDF5004FA598 /* HYHelper.m */; };
+		4F45770A19D7F162004FA598 /* login_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F4576F919D7F162004FA598 /* login_bg.png */; };
+		4F45771219D7F162004FA598 /* login_bg@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F45770219D7F162004FA598 /* login_bg@2X.png */; };
+		4F45771919D803CA004FA598 /* loginbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F45771719D803CA004FA598 /* loginbox.png */; };
+		4F45771A19D803CA004FA598 /* loginbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F45771819D803CA004FA598 /* loginbtn.png */; };
+		4F45771D19D803D2004FA598 /* loginbox@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F45771B19D803D2004FA598 /* loginbox@2X.png */; };
+		4F45771E19D803D2004FA598 /* loginbtn@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F45771C19D803D2004FA598 /* loginbtn@2X.png */; };
+		4F45772919D80845004FA598 /* loginbtn_hover.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F45772819D80845004FA598 /* loginbtn_hover.png */; };
+		4F45772B19D8084B004FA598 /* loginbtn_hover@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F45772A19D8084B004FA598 /* loginbtn_hover@2X.png */; };
 		4F50FC6019C7E06800B5A088 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F50FC5F19C7E06800B5A088 /* Foundation.framework */; };
 		4F50FC6219C7E06800B5A088 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F50FC6119C7E06800B5A088 /* CoreGraphics.framework */; };
 		4F50FC6419C7E06800B5A088 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F50FC6319C7E06800B5A088 /* UIKit.framework */; };
@@ -76,6 +85,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F4576F119D7BDF5004FA598 /* HYHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHelper.h; sourceTree = "<group>"; };
+		4F4576F219D7BDF5004FA598 /* HYHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHelper.m; sourceTree = "<group>"; };
+		4F4576F919D7F162004FA598 /* login_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_bg.png; sourceTree = "<group>"; };
+		4F45770219D7F162004FA598 /* login_bg@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_bg@2X.png"; sourceTree = "<group>"; };
+		4F45771719D803CA004FA598 /* loginbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbox.png; sourceTree = "<group>"; };
+		4F45771819D803CA004FA598 /* loginbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbtn.png; sourceTree = "<group>"; };
+		4F45771B19D803D2004FA598 /* loginbox@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginbox@2X.png"; sourceTree = "<group>"; };
+		4F45771C19D803D2004FA598 /* loginbtn@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginbtn@2X.png"; sourceTree = "<group>"; };
+		4F45772819D80845004FA598 /* loginbtn_hover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginbtn_hover.png; sourceTree = "<group>"; };
+		4F45772A19D8084B004FA598 /* loginbtn_hover@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loginbtn_hover@2X.png"; sourceTree = "<group>"; };
 		4F50FC5C19C7E06800B5A088 /* keytask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = keytask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F50FC5F19C7E06800B5A088 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4F50FC6119C7E06800B5A088 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -180,6 +199,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F4576F419D7F162004FA598 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				4F4576F519D7F162004FA598 /* 320X480 */,
+				4F4576FE19D7F162004FA598 /* 640X960 */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		4F4576F519D7F162004FA598 /* 320X480 */ = {
+			isa = PBXGroup;
+			children = (
+				4F45772819D80845004FA598 /* loginbtn_hover.png */,
+				4F45771719D803CA004FA598 /* loginbox.png */,
+				4F45771819D803CA004FA598 /* loginbtn.png */,
+				4F4576F919D7F162004FA598 /* login_bg.png */,
+			);
+			path = 320X480;
+			sourceTree = "<group>";
+		};
+		4F4576FE19D7F162004FA598 /* 640X960 */ = {
+			isa = PBXGroup;
+			children = (
+				4F45772A19D8084B004FA598 /* loginbtn_hover@2X.png */,
+				4F45771B19D803D2004FA598 /* loginbox@2X.png */,
+				4F45771C19D803D2004FA598 /* loginbtn@2X.png */,
+				4F45770219D7F162004FA598 /* login_bg@2X.png */,
+			);
+			path = 640X960;
+			sourceTree = "<group>";
+		};
 		4F50FC5319C7E06800B5A088 = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +376,8 @@
 				4F6AB27319D277E8007DBACD /* HYConstants.h */,
 				4F6AB27419D27A88007DBACD /* HYImageFactory.h */,
 				4F6AB27519D27A88007DBACD /* HYImageFactory.m */,
+				4F4576F119D7BDF5004FA598 /* HYHelper.h */,
+				4F4576F219D7BDF5004FA598 /* HYHelper.m */,
 			);
 			path = Utity;
 			sourceTree = "<group>";
@@ -341,6 +393,7 @@
 		4F6AB25F19D27050007DBACD /* images */ = {
 			isa = PBXGroup;
 			children = (
+				4F4576F419D7F162004FA598 /* login */,
 				4F6AB27719D299DB007DBACD /* tabbar */,
 				4F6AB26019D270A2007DBACD /* navigation */,
 			);
@@ -522,7 +575,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F45770A19D7F162004FA598 /* login_bg.png in Resources */,
 				4F6AB26C19D270A2007DBACD /* rightButton.png in Resources */,
+				4F45772919D80845004FA598 /* loginbtn_hover.png in Resources */,
 				4F6AB2A519D2A8BB007DBACD /* tabbarbg.png in Resources */,
 				4F6AB29819D299DB007DBACD /* ico2@2X.png in Resources */,
 				4F6AB29A19D299DB007DBACD /* ico3@2X.png in Resources */,
@@ -533,11 +588,14 @@
 				4F6AB29919D299DB007DBACD /* ico2_hover@2X.png in Resources */,
 				4F6AB27219D270A2007DBACD /* topbg@2X.png in Resources */,
 				4F6AB29019D299DB007DBACD /* ico2_hover.png in Resources */,
+				4F45771919D803CA004FA598 /* loginbox.png in Resources */,
+				4F45771E19D803D2004FA598 /* loginbtn@2X.png in Resources */,
 				4F6AB29419D299DB007DBACD /* ico4_hover.png in Resources */,
 				4F6AB26E19D270A2007DBACD /* topbg.png in Resources */,
 				4F6AB28F19D299DB007DBACD /* ico2.png in Resources */,
 				4F50FC6C19C7E06800B5A088 /* InfoPlist.strings in Resources */,
 				4F6AB29119D299DB007DBACD /* ico3.png in Resources */,
+				4F45772B19D8084B004FA598 /* loginbtn_hover@2X.png in Resources */,
 				4F6AB27019D270A2007DBACD /* rightButton@2X.png in Resources */,
 				4F6AB29719D299DB007DBACD /* ico1_hover@2X.png in Resources */,
 				4F6AB29C19D299DB007DBACD /* ico4@2X.png in Resources */,
@@ -547,8 +605,11 @@
 				4F6AB29619D299DB007DBACD /* ico1@2X.png in Resources */,
 				4F6AB29219D299DB007DBACD /* ico3_hover.png in Resources */,
 				4F50FC7719C7E06800B5A088 /* Images.xcassets in Resources */,
+				4F45771D19D803D2004FA598 /* loginbox@2X.png in Resources */,
 				4F6AB2A719D2A8C0007DBACD /* tabbarbg@2X.png in Resources */,
 				4F6AB26B19D270A2007DBACD /* top1.png in Resources */,
+				4F45771219D7F162004FA598 /* login_bg@2X.png in Resources */,
+				4F45771A19D803CA004FA598 /* loginbtn.png in Resources */,
 				4F6AB28D19D299DB007DBACD /* ico1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,6 +636,7 @@
 				4F6AB2AC19D2B6C8007DBACD /* HYMainViewController.m in Sources */,
 				4F50FCA319C920AE00B5A088 /* HYTabItemModel.m in Sources */,
 				4F50FCA019C91F7800B5A088 /* HYTabbarModel.m in Sources */,
+				4F4576F319D7BDF5004FA598 /* HYHelper.m in Sources */,
 				4F50FCA919C937EE00B5A088 /* HYTabItemController.m in Sources */,
 				4F50FC7519C7E06800B5A088 /* keytask.xcdatamodeld in Sources */,
 				4F50FC6E19C7E06800B5A088 /* main.m in Sources */,

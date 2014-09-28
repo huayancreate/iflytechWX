@@ -7,18 +7,27 @@
 //
 
 #import "HYBaseViewController.h"
-@interface HYBaseViewController ()
+#import "HYNavigationController.h"
+#import "HYHelper.h"
 
+
+@interface HYBaseViewController ()
+@property (nonatomic, strong) HYNavigationController *_nav;
 
 @end
 
 @implementation HYBaseViewController
+@synthesize _nav;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        if(_nav == nil)
+        {
+            _nav = [HYHelper getNavigationController];
+        }
     }
     return self;
 }
@@ -45,5 +54,28 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(HYNavigationController *) getNavigationController
+{
+    return _nav;
+}
+
+-(void)initKeyboard
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardWillShowNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidHide:)
+                                                 name:UIKeyboardWillHideNotification
+                                               object:nil];
+}
+
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];//移除观察者
+}
+
 
 @end

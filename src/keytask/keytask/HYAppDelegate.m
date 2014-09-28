@@ -8,23 +8,56 @@
 
 #import "HYAppDelegate.h"
 #import "HYLoginViewController.h"
+#import "HYImageFactory.h"
+#import "HYConstants.h"
+
+@interface HYAppDelegate()
+@property (nonatomic, strong) HYNavigationController *_nav;
+@property (nonatomic, strong) HYNavigationModel *_navModel;
+
+@end
+
 
 @implementation HYAppDelegate
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
+@synthesize _nav;
+@synthesize _navModel;
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    [self initNavigationBar];
+    
     HYLoginViewController * rootVC = [[HYLoginViewController alloc]init];
+    [rootVC.view addSubview:[_nav getView]];
+    
+    [[rootVC getNavigationController] pushController:rootVC];
+    
     self.window.rootViewController = rootVC;
     
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+-(void)initNavigationBar
+{
+    _navModel = [[HYNavigationModel alloc] init];
+    _navModel._backgroudImg = [HYImageFactory GetImageByName:@"topbg" AndType:PNG];
+    
+    _nav = [[HYNavigationController alloc] initWithModel:_navModel];
+    
+    [_nav setBackgroudImageByModel];
+    [_nav initLeftButton];
+    [_nav initRightButton];
+    
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -149,5 +182,11 @@
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
+
+-(HYNavigationController *)getNavigation
+{
+    return _nav;
+}
+
 
 @end

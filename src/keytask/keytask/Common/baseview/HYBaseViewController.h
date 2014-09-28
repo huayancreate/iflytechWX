@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "HYNavigationController.h"
 
+@class HYNavigationController;
 @interface HYBaseViewController : UIViewController
 
 -(HYNavigationController *) getNavigationController;
+-(void) setNavigationController;
 
 @end
