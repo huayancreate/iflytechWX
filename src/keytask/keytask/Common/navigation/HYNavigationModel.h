@@ -18,5 +18,10 @@
 @property (nonatomic, strong) UIImage *_leftButtonImg;
 -(void)push:(HYBaseViewController *) controller;
 -(void)pop:(HYBaseViewController *) controller;
+-(int)getCount;
+-(HYBaseViewController *)getLastController;
+-(void)removeLastController;
+-(HYBaseViewController *)getFirst;
+-(void)removeAll;
 
 @end

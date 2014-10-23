@@ -7,6 +7,7 @@
 //
 
 #import "HYTabbarView.h"
+#import "HYTabItemController.h"
 
 @interface HYTabbarController : NSObject
 
@@ -14,6 +15,14 @@
 
 -(void)setBackgroudImage:(UIImage *)img;
 
+-(HYTabItemController *)getLastSelectItem;
+
+-(HYTabItemController *)getSelectItem;
+
 -(HYTabbarView *)getView;
+
+-(float)getTabbarHeight;
+
+-(void)initItems;
 
 @end

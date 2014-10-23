@@ -7,7 +7,13 @@
 //
 
 #import "HYBaseViewController.h"
+#import "HYConstants.h"
 
-@interface HYMainViewController : HYBaseViewController
+
+@interface HYMainViewController : HYBaseViewController<UITableViewDelegate,UITableViewDataSource>
+
+
+-(void)setItemTag:(int) itemTag;
+-(void)reloadData;
 
 @end

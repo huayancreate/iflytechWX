@@ -9,8 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "HYNavigationController.h"
 
+@class HYNavigationController;
+@class HYTabbarController;
 @interface HYHelper : NSObject
 +(HYNavigationController *)getNavigationController;
++(HYTabbarController *)getTabbarController;
++(UIWindow *)getWindow;
 
 
 @end

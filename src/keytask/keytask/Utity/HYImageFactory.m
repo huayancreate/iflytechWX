@@ -13,7 +13,8 @@
 +(UIImage *)GetImageByName:(NSString *)name AndType:(NSString *)type
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:type];
-    return [UIImage imageWithContentsOfFile:path];
+    return  [UIImage imageWithContentsOfFile:path];
 }
+
 
 @end

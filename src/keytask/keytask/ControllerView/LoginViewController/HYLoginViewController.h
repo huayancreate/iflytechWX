@@ -10,4 +10,5 @@
 
 @interface HYLoginViewController : HYBaseViewController
 
+
 @end

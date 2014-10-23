@@ -9,12 +9,22 @@
 #import "HYTabbarController.h"
 #import "HYTabItemController.h"
 #import "HYScreenTools.h"
+#import "HYImageFactory.h"
+#import "HYConstants.h"
+#import "HYTabItemView.h"
+#import "HYHelper.h"
+#import "HYMoreViewController.h"
+#import "HYHelper.h"
+#import "HYMainViewController.h"
+
 
 @interface HYTabbarController ()
 @property (nonatomic, strong) NSMutableArray *_items;
 @property (nonatomic, strong) HYTabbarView *_view;
 @property float _originY;
 @property float _originX;
+@property (nonatomic, strong) HYTabItemController *_selectItem;
+@property (nonatomic, strong) HYTabItemController *_lastSelectItem;
 
 @end
 
@@ -23,10 +33,22 @@
 @synthesize _view;
 @synthesize _originY;
 @synthesize _originX;
+@synthesize _selectItem;
+@synthesize _lastSelectItem;
 
 -(HYTabbarView *)getView
 {
     return _view;
+}
+
+-(HYTabItemController *)getLastSelectItem
+{
+    return _lastSelectItem;
+}
+
+-(HYTabItemController *)getSelectItem
+{
+    return _selectItem;
 }
 
 -(HYTabbarController *)initWithTabbarItem:(NSMutableArray *)items
@@ -44,6 +66,80 @@
     [_view setBackgroundColor:[UIColor colorWithPatternImage:img]];
 }
 
+-(float)getTabbarHeight
+{
+    return _view.frame.size.height;
+}
+
+-(void)initItems
+{
+    assert(_items != nil);
+    float itemsWidth = ([HYScreenTools getScreenWidth] / [_items count]);
+    for (int i = 0; i < [_items count]; i++) {
+        
+        HYTabItemController *item = [_items objectAtIndex:i];
+        HYTabItemView *imgBgView = [[HYTabItemView alloc] initWithFrame:CGRectMake(i * itemsWidth , 0, itemsWidth, [self getTabbarHeight])];
+        [item setView:imgBgView];
+        [item setItemWidth:itemsWidth];
+        [item setIndex:i];
+        [item setBackgroundImage];
+        if(i == 0)
+        {
+            [item setSelect:true];
+            _selectItem = item;
+        }else
+        {
+            [item setSelect:false];
+        }
+        //绑定事件
+        [item bindAction:@selector(onClickImg:) Target:self];
+        [_view addSubview:[item getView]];
+    }
+}
+
+-(void)onClickImg:(UIGestureRecognizer *)gestureRecognizer
+{
+    UIView *viewClicked = [gestureRecognizer view];
+    if([_selectItem getShowView].tag != viewClicked.tag)
+    {
+        [_lastSelectItem setSelect:NO];
+        _lastSelectItem = _selectItem;
+        [_selectItem setSelect:NO];
+        HYTabItemController *clickItem = [_items objectAtIndex:viewClicked.tag];
+        _selectItem = clickItem;
+        [clickItem setSelect:YES];
+        [[HYHelper getNavigationController] setCenterTittle:[clickItem getName]];
+        HYNavigationController *nav = [HYHelper getNavigationController];
+        HYMainViewController *viewController = [nav getLastModel];
+        if(viewClicked.tag == 0)
+        {
+            [viewController setItemTag:TASK_START];
+            [viewController reloadData];
+            return;
+        }
+        if(viewClicked.tag == 1)
+        {
+            [viewController setItemTag:TASK_EXC];
+            [viewController reloadData];
+            return;
+        }
+        if(viewClicked.tag == 2)
+        {
+            [viewController setItemTag:TASK_JOIN];
+            [viewController reloadData];
+            return;
+        }
+        if(viewClicked.tag == 3)
+        {
+            HYMoreViewController *moreView = [[HYMoreViewController alloc] init];
+            [moreView setTitle:@""];
+            [[HYHelper getNavigationController] pushController:moreView];
+        }else
+        {
+            [viewController reloadData];
+        }
+    }
+}
 
 
 @end

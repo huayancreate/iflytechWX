@@ -10,10 +10,16 @@
 #import "HYLoginViewController.h"
 #import "HYImageFactory.h"
 #import "HYConstants.h"
+#import "IQKeyboardManager.h"
+#import "HYTabItemController.h"
+#import "DrawPatternLockViewController.h"
+#import "HYMainViewController.h"
 
 @interface HYAppDelegate()
 @property (nonatomic, strong) HYNavigationController *_nav;
 @property (nonatomic, strong) HYNavigationModel *_navModel;
+@property (nonatomic, strong) HYTabbarController *_tabbar;
+@property (nonatomic, strong) DrawPatternLockViewController *lockVC;
 
 @end
 
@@ -25,26 +31,100 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 @synthesize _nav;
 @synthesize _navModel;
+@synthesize _tabbar;
+@synthesize lockVC;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
-    
+
+    [[IQKeyboardManager sharedManager] setEnable:YES];
     
     [self initNavigationBar];
     
-    HYLoginViewController * rootVC = [[HYLoginViewController alloc]init];
-    [rootVC.view addSubview:[_nav getView]];
+    [self initTabBar];
     
-    [[rootVC getNavigationController] pushController:rootVC];
-    
-    self.window.rootViewController = rootVC;
+    //读取plist
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"lockPlist" ofType:@"plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    if([[data objectForKey:@"isLogin"] boolValue])
+    {
+        lockVC = [[DrawPatternLockViewController alloc] init];
+        [lockVC setTarget:self withAction:@selector(lockEntered:)];
+        self.window.rootViewController = lockVC;
+    }else
+    {
+        HYLoginViewController * rootVC = [[HYLoginViewController alloc]init];
+        [[rootVC getNavigationController] pushController:rootVC];
+//        self.window.rootViewController = rootVC;
+    }
     
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+
+- (void)lockEntered:(NSString*)key {
+    NSLog(@"key: %@", key);
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"lockPlist" ofType:@"plist"];
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] initWithContentsOfFile:plistPath];
+    if (![key isEqualToString:[data objectForKey:@"key"]]) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"错误"
+                                                            message:@"密码不正确!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:nil
+                                                  otherButtonTitles:@"确定", nil];
+        [alertView show];
+    }else
+    {
+        HYLoginViewController *loginView = [[HYLoginViewController alloc] init];
+        loginView.user.accountName = [data objectForKey:@"accountName"];
+        loginView.user.token = [data objectForKey:@"token"];
+        loginView.user.username = [data objectForKey:@"username"];;
+        [[_nav getModel] push:loginView];
+        
+        HYMainViewController *mainView = [[HYMainViewController alloc] init];
+        mainView.user = loginView.user;
+        [mainView setItemTag:TASK_START];
+        [_nav pushController:mainView];
+    }
+}
+
+-(void)initTabBar
+{
+    HYTabItemModel *itemstartModel = [[HYTabItemModel alloc] init];
+    HYTabItemController *itemstart = [[HYTabItemController alloc] initWithModel:itemstartModel];
+    [itemstart setUnselectBackgroudImage:[HYImageFactory GetImageByName:@"start" AndType:PNG]];
+    [itemstart setSelectBackgroundImage:[HYImageFactory GetImageByName:@"start_hover" AndType:PNG]];
+    [itemstart setName:MY_TASK_START];
+    
+    HYTabItemModel *itemexcModel = [[HYTabItemModel alloc] init];
+    HYTabItemController *itemexc = [[HYTabItemController alloc] initWithModel:itemexcModel];
+    [itemexc setUnselectBackgroudImage:[HYImageFactory GetImageByName:@"exc" AndType:PNG]];
+    [itemexc setSelectBackgroundImage:[HYImageFactory GetImageByName:@"exc_hover" AndType:PNG]];
+    [itemexc setName:MY_TASK_EXC];
+    
+    HYTabItemModel *itemjionModel = [[HYTabItemModel alloc] init];
+    HYTabItemController *itemjion = [[HYTabItemController alloc] initWithModel:itemjionModel];
+    [itemjion setUnselectBackgroudImage:[HYImageFactory GetImageByName:@"jion" AndType:PNG]];
+    [itemjion setSelectBackgroundImage:[HYImageFactory GetImageByName:@"jion_hover" AndType:PNG]];
+    [itemjion setName:MY_TASK_JOIN];
+    
+    HYTabItemModel *itemmoreModel = [[HYTabItemModel alloc] init];
+    HYTabItemController *itemmore = [[HYTabItemController alloc] initWithModel:itemmoreModel];
+    [itemmore setUnselectBackgroudImage:[HYImageFactory GetImageByName:@"more" AndType:PNG]];
+    [itemmore setSelectBackgroundImage:[HYImageFactory GetImageByName:@"more_hover" AndType:PNG]];
+    
+    
+    NSArray *items = [[NSArray alloc] initWithObjects:itemstart,itemexc, itemjion,itemmore,nil];
+    _tabbar = [[HYTabbarController alloc] initWithTabbarItem:items];
+    [_tabbar setBackgroudImage:[HYImageFactory GetImageByName:@"tabbarbg" AndType:PNG]];
+    
+    [_tabbar initItems];
 }
 
 -(void)initNavigationBar
@@ -187,6 +267,22 @@
 {
     return _nav;
 }
+
+-(HYTabbarController *)getTabbar
+{
+    return _tabbar;
+}
+
+static void uncaughtExceptionHandler(NSException *exception) {
+    
+    NSLog(@"CRASH: %@", exception);
+    
+    NSLog(@"Stack Trace: %@", [exception callStackSymbols]);
+    
+    // Internal error reporting
+    
+}
+
 
 
 @end

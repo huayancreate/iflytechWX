@@ -11,5 +11,4 @@
 @interface HYImageFactory : NSObject
 
 +(UIImage *)GetImageByName:(NSString *)name AndType:(NSString *)type;
-
 @end

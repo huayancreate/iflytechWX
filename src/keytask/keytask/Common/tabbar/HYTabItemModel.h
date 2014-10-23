@@ -10,6 +10,14 @@
 
 @interface HYTabItemModel : NSObject
 
+-(void)setIndex:(int)index;
+
+-(void)setItemWidth:(float)itemWidth;
+
+-(int)getIndex;
+
+-(float)getItemWidth;
+
 -(int)getBadgeNumber;
 
 -(void)setUnselectBackgroudImage:(UIImage *) image;

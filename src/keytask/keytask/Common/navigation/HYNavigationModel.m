@@ -20,6 +20,11 @@
 @synthesize _leftButtonImg;
 @synthesize _stock;
 
+-(void)removeAll
+{
+    [_stock removeAllObjects];
+}
+
 -(void)push:(HYBaseViewController *)controller
 {
     if(_stock == nil)
@@ -29,6 +34,26 @@
     
     [_stock addObject:controller];
 
+}
+
+-(void)removeLastController
+{
+    [_stock removeLastObject];
+}
+
+-(int)getCount
+{
+    return [_stock count];
+}
+
+-(HYBaseViewController *)getFirst
+{
+    return [_stock objectAtIndex:0];
+}
+
+-(HYBaseViewController *)getLastController
+{
+    return [_stock objectAtIndex:([_stock count] - 1)];
 }
 
 @end

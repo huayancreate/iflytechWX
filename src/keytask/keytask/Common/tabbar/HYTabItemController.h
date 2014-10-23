@@ -8,8 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "HYTabItemModel.h"
+#import "HYTabItemView.h"
 
 @interface HYTabItemController : NSObject
+
+-(void)bindAction:(SEL)action Target:(id)target;
+
+-(UIImageView *)getShowView;
+
+-(HYTabItemView *)getView;
+
+-(void)setIndex:(int)index;
+
+-(void)setItemWidth:(float)itemWidth;
+
+-(void)setView:(HYTabItemView *)view;
 
 -(HYTabItemController *)initWithModel:(HYTabItemModel *) model;
 
@@ -28,5 +41,9 @@
 -(void)setBackgroundImage;
 
 -(void)setSelect:(BOOL) select;
+
+-(UIImage *)getSelectBackgroundImage;
+
+-(UIImage *)getUnselectBackgroundImage;
 
 @end

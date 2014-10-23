@@ -18,4 +18,18 @@
     return [appDelegate getNavigation];
 }
 
++(HYTabbarController *)getTabbarController
+{
+    HYAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    return [appDelegate getTabbar];
+}
+
++(UIWindow *)getWindow
+{
+    HYAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    return [appDelegate window];
+}
+
+
+
 @end
