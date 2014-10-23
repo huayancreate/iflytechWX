@@ -10,6 +10,8 @@
 #import "HYNavigationModel.h"
 #import "HYNavigationView.h"
 #import "HYScreenTools.h"
+#import "HYConstants.h"
+#import "HYHelper.h"
 
 @interface HYNavigationController ()
 @property (nonatomic, strong) NSMutableArray *viewstack;
@@ -33,6 +35,73 @@
 @synthesize _rightButton;
 @synthesize _originX;
 @synthesize _statusHeight;
+
+-(void)removeAllModels
+{
+    [_model removeAll];
+}
+
+-(HYNavigationModel *)getModel
+{
+    return _model;
+}
+
+-(HYBaseViewController *)getFirstController
+{
+    return [_model getFirst];
+}
+
+-(HYBaseViewController *)getLastModel
+{
+    return [_model getLastController];
+}
+
+-(void)setRightButtonTittle:(NSString *)tittle
+{
+    [_rightButton setTitle:tittle forState:UIControlStateNormal];
+    [_rightButton.titleLabel setFont:[UIFont fontWithName:FONT size:13]];
+}
+
+-(UIButton *)getRightButton
+{
+    return _rightButton;
+}
+
+-(void)hideLeftButton
+{
+    [_leftButton setHidden:YES];
+}
+
+-(void)hideLeftTittle
+{
+    [_leftTittleLabel setHidden:YES];
+}
+
+-(void)showLeftButton
+{
+    [_leftButton setHidden:NO];
+}
+
+-(void)showLeftTittle
+{
+    [_leftTittleLabel setHidden:NO];
+}
+
+-(void)removeRightTarget
+{
+    [_rightButton removeTarget:nil action:nil forControlEvents:UIControlEventAllEvents];
+}
+
+
+-(void)showRightButton
+{
+    [_rightButton setHidden:NO];
+}
+
+-(void)hideRightButton
+{
+    [_rightButton setHidden:YES];
+}
 
 -(HYNavigationController *)initWithModel:(HYNavigationModel *)model
 {
@@ -90,16 +159,18 @@
     assert(_rightButton != nil);
     [_rightButton setAdjustsImageWhenHighlighted:NO];
     [_rightButton setBackgroundColor:[UIColor clearColor]];
-    [_rightButton setImage:img forState:UIControlStateNormal];
+    [_rightButton setBackgroundImage:img forState:UIControlStateNormal];
 }
 
 -(void)setLeftTittle:(NSString *)tittle
 {
     if(_leftTittleLabel == nil)
     {
-        _leftTittleLabel = [[UILabel alloc] initWithFrame:CGRectMake(44, 5 + _statusHeight, 66, 34)];
+        _leftTittleLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 5, 150, 34)];
     }
+    [_leftTittleLabel setText:tittle];
     _leftTittleLabel.textAlignment = NSTextAlignmentLeft;
+    [_view addSubview:_leftTittleLabel];
 }
 
 -(void)setLeftTittleFont:(UIFont *)font
@@ -120,15 +191,61 @@
     _centerTittleLabel.font = font;
 }
 
+-(void)setCenterTittleColor:(UIColor *)color
+{
+    assert(_centerTittleLabel != nil);
+    _centerTittleLabel.textColor = color;
+}
+
+-(void)setLeftTittleColor:(UIColor *)color
+{
+    assert(_centerTittleLabel != nil);
+    _leftTittleLabel.textColor = color;
+}
+
 -(void)setRightButtonTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents
 {
     [_rightButton addTarget:target action:action forControlEvents:controlEvents];
 }
 
+-(void)setLeftButtonTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents
+{
+    [_leftButton addTarget:target action:action forControlEvents:controlEvents];
+}
+
 -(void)pushController:(HYBaseViewController *)controller
 {
+    
+    if([_model getCount] == 0)
+    {
+        [HYHelper getWindow].rootViewController = controller;
+    }else
+    {
+        [controller setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [[_model getLastController] presentViewController:controller animated:YES completion:nil];
+    }
     [_model push:controller];
 }
+
+-(void)popController:(HYBaseViewController *)controller
+{
+    if([_model getCount] == 1)
+    {
+    }else
+    {
+//
+        [controller setModalTransitionStyle:UIModalTransitionStyleCrossDissolve];
+        [controller dismissViewControllerAnimated:YES completion:nil];
+    }
+    [_model removeLastController];
+}
+
+-(float)getNavigationHeight
+{
+    return _view.frame.size.height;
+}
+
+
 
 -(void)show
 {

@@ -14,11 +14,27 @@
 @class HYBaseViewController;
 @interface HYNavigationController : NSObject
 
+-(void)hideRightButton;
+-(void)showRightButton;
+-(void)hideLeftButton;
+-(void)hideLeftTittle;
+-(void)showLeftButton;
+-(void)showLeftTittle;
 -(HYNavigationController *)initWithModel:(HYNavigationModel *)model;
 -(void)setBackgroudImageByModel;
 -(void)pushController:(HYBaseViewController *)controller;
 -(void)show;
-
+-(float)getNavigationHeight;
+-(void)setLeftTittleColor:(UIColor *)color;
+-(void)setLeftButtonTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents;
+-(void)popController:(HYBaseViewController *)controller;
+-(void)removeRightTarget;
+-(HYBaseViewController *)getLastModel;
+-(UIButton *)getRightButton;
+-(void)setRightButtonTittle:(NSString *)tittle;
+-(HYBaseViewController *)getFirstController;
+-(HYNavigationModel *)getModel;
+-(void)removeAllModels;
 
 -(UIView *)getView;
 -(void)popToParentView;
@@ -32,6 +48,8 @@
 -(void)setLeftTittleFont:(UIFont *)font;
 -(void)setRightTittleFont:(UIFont *)font;
 -(void)setCenterTittleFont:(UIFont *)font;
+-(void)setCenterTittleColor:(UIColor *)color;
+
 -(void)setRightButtonTarget:(id)target action:(SEL)action forControlEvents:(UIControlEvents)controlEvents;
 -(void)initLeftButton;
 -(void)initRightButton;

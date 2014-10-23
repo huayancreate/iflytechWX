@@ -9,15 +9,20 @@
 #import "HYBaseViewController.h"
 #import "HYNavigationController.h"
 #import "HYHelper.h"
+#import "DataProcessing.h"
+#import "HYLoginViewController.h"
 
 
 @interface HYBaseViewController ()
 @property (nonatomic, strong) HYNavigationController *_nav;
+@property (nonatomic, strong) HYTabbarController *_tabbar;
 
 @end
 
 @implementation HYBaseViewController
 @synthesize _nav;
+@synthesize _tabbar;
+@synthesize user;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +33,31 @@
         {
             _nav = [HYHelper getNavigationController];
         }
+        if(_tabbar == nil)
+        {
+            _tabbar = [HYHelper getTabbarController];
+        }
+        if(user == nil)
+        {
+            user = [[HYUserLoginModel alloc] init];
+        }
     }
     return self;
+}
+
+
+-(void)logoutAction
+{
+    [[[self getNavigationController] getModel] removeAll];
+    HYLoginViewController *loginView = [[HYLoginViewController alloc] init];
+    [[self getNavigationController] pushController:loginView];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.view addSubview:[_nav getView]];
+    [self.view addSubview:[_tabbar getView]];
 }
 
 - (void)viewDidLoad
@@ -60,6 +88,11 @@
     return _nav;
 }
 
+-(HYTabbarController *)getTabbarController
+{
+    return _tabbar;
+}
+
 -(void)initKeyboard
 {
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -75,6 +108,18 @@
 -(void)viewDidDisappear:(BOOL)animated{
     [super viewDidDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self];//移除观察者
+}
+
+- (void) requestFinished:(ASIHTTPRequest *)request
+{
+    NSString *responsestring = [request responseString];
+    [self performSelectorOnMainThread:@selector(endRequest:) withObject:responsestring waitUntilDone:YES];
+}
+
+- (void)requestFailed:(ASIHTTPRequest *)request
+{
+    NSString *responsestring = @"服务器连接失败";
+    [self performSelectorOnMainThread:@selector(endFailedRequest:) withObject:responsestring waitUntilDone:YES];
 }
 
 

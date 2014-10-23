@@ -8,11 +8,18 @@
 
 #import <UIKit/UIKit.h>
 #import "HYNavigationController.h"
+#import "SVProgressHUD.h"
+#import "DataProcessing.h"
+#import "HYTabbarController.h"
+#import "HYUserLoginModel.h"
 
 @class HYNavigationController;
+@class HYTabbarController;
 @interface HYBaseViewController : UIViewController
-
 -(HYNavigationController *) getNavigationController;
+-(HYTabbarController *) getTabbarController;
 -(void) setNavigationController;
+@property HYUserLoginModel *user;
+-(void)logoutAction;
 
 @end
