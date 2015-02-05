@@ -23,9 +23,10 @@
 @property (nonatomic, strong) NSString *executorName;
 @property (nonatomic, strong) NSString *ID;
 @property (nonatomic, strong) NSString *endTime;
-@property (nonatomic, strong) NSMutableArray *operateList;
+//@property (nonatomic, strong) NSMutableArray *operateList;
 @property (nonatomic, strong) HYFunctionsModel *functions;
 @property (nonatomic, strong) NSMutableArray *recordList;
+@property int messageCount;
 
 @property (nonatomic, strong) NSString *paticrpant;
 @property (nonatomic, strong) NSString *paticrpantName;
@@ -34,6 +35,7 @@
 @property (nonatomic, strong) NSString *days;
 @property (nonatomic, strong) NSString *product;
 @property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *lastOperateInfo;
 
 
 

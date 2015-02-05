@@ -20,5 +20,6 @@
 @synthesize headImg;
 @synthesize proxy;
 @synthesize proxyName;
+@synthesize fileModel;
 
 @end

@@ -10,6 +10,7 @@
 #import "HYConstants.h"
 #import "HYScreenTools.h"
 #import "HYImageFactory.h"
+#import "Harpy.h"
 
 @implementation HYTaskListTableViewCell
 @synthesize statusImgView;
@@ -17,6 +18,7 @@
 @synthesize lastDateView;
 @synthesize lastInfoView;
 @synthesize model;
+@synthesize messageCount;
 
 - (void)awakeFromNib {
     // Initialization code
@@ -31,7 +33,8 @@
 
 -(void)initControl
 {
-    statusImgView = [[UIImageView alloc] initWithFrame:CGRectMake(9, 9, 42, 42)];
+    
+    statusImgView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 44, 44)];
     [self addSubview:statusImgView];
     [statusImgView setImage:[HYImageFactory GetImageByName:[model getImgName] AndType:PNG]];
     taskNameView = [[UILabel alloc] initWithFrame:CGRectMake(60, 5, 190, 22)];
@@ -59,6 +62,26 @@
     [lastDateView setFont:[UIFont fontWithName:FONT size:8]];
     [lastDateView setTextColor:[UIColor grayColor]];
     [self addSubview:lastDateView];
+    
+    if(model.messageCount != 0)
+    {
+        messageCount = [[UIImageView alloc] initWithFrame:CGRectMake([HYScreenTools getScreenWidth] - 15, 15, 12, 12)];
+//        [messageCount setBackgroundColor:[UIColor redColor]];
+//         messageCount.layer.cornerRadius = 10;
+        [messageCount setImage:[HYImageFactory GetImageByName:@"tabbarred" AndType:PNG]];
+        UILabel *msgLabel = [[UILabel alloc] initWithFrame:CGRectMake(2, 2, 8, 8)];
+        msgLabel.text = [NSString stringWithFormat:@"%d",model.messageCount];
+        msgLabel.textColor = [UIColor whiteColor];
+        msgLabel.textAlignment = NSTextAlignmentCenter;
+        [msgLabel setFont:[UIFont fontWithName:FONT size:7]];
+        [messageCount addSubview:msgLabel];
+         // A thin border.
+//         messageCount.layer.borderColor = [UIColor clearColor].CGColor;
+//         messageCount.layer.borderWidth = 0.3;
+//         messageCount
+//         [UIColor colorWithPatternImage:[HYImageFactory GetImageByName:@"tabbarred" AndType:PNG]]];
+        [self addSubview:messageCount];
+    }
     
 }
 

@@ -13,6 +13,7 @@ typedef enum {
     
 }ChartMessageType;
 #import <Foundation/Foundation.h>
+#import "HYFileModel.h"
 
 @interface ChartMessage : NSObject
 @property (nonatomic,assign) ChartMessageType messageType;
@@ -21,5 +22,7 @@ typedef enum {
 @property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSDictionary *dict;
 @property (nonatomic, copy) NSString *iconLabelText;
+@property (nonatomic, strong) HYFileModel *fileModel;
+@property (nonatomic, strong) NSString *iconAccountName;
 
 @end

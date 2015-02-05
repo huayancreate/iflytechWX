@@ -12,10 +12,33 @@
 
 @implementation HYHelper
 
++(NSString *)getRemoteTaskID
+{
+    HYAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    return appDelegate.remoteTaskID;
+}
+
++(HYAppDelegate *)getApp
+{
+    return [[UIApplication sharedApplication] delegate];
+}
+
++(void)setLockView:(DrawPatternLockViewController *)view
+{
+    HYAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.lockVC = view;
+}
+
 +(HYNavigationController *)getNavigationController
 {
     HYAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
     return [appDelegate getNavigation];
+}
+
++(DrawPatternLockViewController *)getLockView
+{
+    HYAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    return [appDelegate lockVC];
 }
 
 +(HYTabbarController *)getTabbarController
@@ -30,6 +53,29 @@
     return [appDelegate window];
 }
 
++(HYUserLoginModel *)getUser
+{
+    HYAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    return [appDelegate user];
+}
+
++(void)setUser:(HYUserLoginModel *)user
+{
+    HYAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.user = user;
+}
+
++(NSString *)getDownloadURL
+{
+    HYAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    return appDelegate.downloadString;
+}
+
++(void)setDownloadURL:(NSString *)downloadURL
+{
+    HYAppDelegate *appDelegate = [[UIApplication sharedApplication] delegate];
+    appDelegate.downloadString = downloadURL;
+}
 
 
 @end

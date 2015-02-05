@@ -14,5 +14,18 @@
 @synthesize headImg;
 @synthesize username;
 @synthesize selectList;
+@synthesize lastTimeHeadImg;
+@synthesize partList;
+@synthesize selectPartList;
+@synthesize proxyList;
+@synthesize excList;
+@synthesize endTimeString;
+@synthesize executorString;
+@synthesize paticrpantString;
+@synthesize isAddPartViewList;
+@synthesize isNew;
+@synthesize password;
+@synthesize helpModel;
+@synthesize isLogin;
 
 @end

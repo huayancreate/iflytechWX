@@ -16,4 +16,8 @@
 @synthesize ID;
 @synthesize headImg;
 @synthesize createTime;
+@synthesize type;
+@synthesize proxy;
+@synthesize proxyName;
+
 @end

@@ -12,8 +12,19 @@
 
 @property (nonatomic, strong) UIImage *icon;
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *accountName;
+
+-(HYPeopleInfoView *)getViewWithWidth:(float)iconWidth iconHeight:(float)iconHeight nameWidth:(float)nameWidth nameHeight:(float)nameHeight;
+-(void)setViewName:(NSString *)viewName;
+
+-(void)addDelView;
+
+-(void)removeDelView;
 
 -(HYPeopleInfoView *)getView;
--(void)setViewName:(NSString *)viewName;
+
+-(void)setHeadImgUrlStr:(NSString *)imgUrl;
+
+
 
 @end

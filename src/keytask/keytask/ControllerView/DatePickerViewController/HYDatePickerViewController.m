@@ -34,7 +34,7 @@
     //[self.view setFrame:CGRectMake(50, 120 , [HYScreenTools getScreenWidth] - 100, 300)];
     [self.view setFrame:CGRectMake(45, 115, [HYScreenTools getScreenWidth] - 90, 320)];
     UIImageView *imgBgView = [HYControlFactory GetImgViewWithCGRect:CGRectMake(50, 120, self.view.frame.size.width - 100 , 300) backgroundImgName:nil backgroundColor:[UIColor clearColor] isCornerRadius:NO closeKeyboard:NO isFrame:NO];
-    NSLog(@"self.view = %f" ,self.view.frame.size.width);
+    //NSLog(@"self.view = %f" ,self.view.frame.size.width);
     [self.view addSubview:imgBgView];
     
     UIDatePicker *datePicker = [ [ UIDatePicker alloc] initWithFrame:CGRectMake(0 ,20,imgBgView.frame.size.width,imgBgView.frame.size.height - 20)];

@@ -12,6 +12,7 @@
 #import "HYScreenTools.h"
 #import "HYConstants.h"
 #import "HYHelper.h"
+#import "HYMessageViewController.h"
 
 @interface HYNavigationController ()
 @property (nonatomic, strong) NSMutableArray *viewstack;
@@ -135,14 +136,14 @@
 -(void)initLeftButton
 {
     _leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_leftButton setFrame:CGRectMake(0, 0, 44, 44)];
+    [_leftButton setFrame:CGRectMake(3, 7, 30, 30)];
     [_view addSubview:_leftButton];
 }
 
 -(void)initRightButton
 {
     _rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_rightButton setFrame:CGRectMake((_originX - 44), 0, 44, 44)];
+    [_rightButton setFrame:CGRectMake((_originX - 37), 4.5, 35, 35)];
     [_view addSubview:_rightButton];
 }
 
@@ -175,6 +176,10 @@
 
 -(void)setLeftTittleFont:(UIFont *)font
 {
+    if(_leftTittleLabel == nil)
+    {
+        _leftTittleLabel = [[UILabel alloc] initWithFrame:CGRectMake(45, 5, 150, 34)];
+    }
     assert(_leftTittleLabel != nil);
     _leftTittleLabel.font = font;
 }
@@ -238,6 +243,11 @@
         [controller dismissViewControllerAnimated:YES completion:nil];
     }
     [_model removeLastController];
+    if([[_model getLastController] isKindOfClass:[HYMessageViewController class]])
+    {
+        HYMessageViewController *tempController = (HYMessageViewController *)[_model getLastController];
+        tempController.isImgFlag = NO;
+    }
 }
 
 -(float)getNavigationHeight

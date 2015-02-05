@@ -9,10 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "HYNavigationController.h"
 #import "HYTabbarController.h"
+#import "HYUserLoginModel.h"
+#import "DrawPatternLockViewController.h"
 
 @interface HYAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) HYUserLoginModel *user;
+@property (nonatomic, strong) DrawPatternLockViewController *lockVC;
+@property (nonatomic, strong) NSString *app_id;
+@property (nonatomic, strong) NSString *channel_id;
+@property (nonatomic, strong) NSString *user_id;
+@property (nonatomic, strong) NSString *downloadString;
+@property (nonatomic, strong) NSString *remoteTaskID;
 
 -(HYNavigationController *)getNavigation;
 -(HYTabbarController *)getTabbar;

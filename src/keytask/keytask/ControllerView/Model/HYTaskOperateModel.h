@@ -16,4 +16,8 @@
 @property (nonatomic, strong) NSString *ID;
 @property (nonatomic, strong) NSString *headImg;
 @property (nonatomic, strong) NSString *createTime;
+@property (nonatomic, strong) NSString *type;
+@property (nonatomic, strong) NSString *proxy;
+@property (nonatomic, strong) NSString *proxyName;
+
 @end

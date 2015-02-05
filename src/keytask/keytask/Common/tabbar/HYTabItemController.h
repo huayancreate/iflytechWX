@@ -32,6 +32,10 @@
 
 -(void)setName:(NSString *) name;
 
+-(void)setType:(NSString *)type;
+
+-(NSString *)getType;
+
 -(NSString *)getName;
 
 -(void)setBadgeNumber:(int) number;

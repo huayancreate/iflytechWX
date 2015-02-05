@@ -21,5 +21,6 @@
 -(void) setNavigationController;
 @property HYUserLoginModel *user;
 -(void)logoutAction;
+-(void)logoutRealAction;
 
 @end

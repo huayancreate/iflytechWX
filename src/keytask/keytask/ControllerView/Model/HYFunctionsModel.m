@@ -81,9 +81,20 @@
     }
     if([forwardingF isEqual:@"True"])
     {
-        [showNames addObject:@"转发"];
+        [showNames addObject:@"复制"];
     }
     return showNames;
+}
+
+-(BOOL)getEdit
+{
+    if([editF isEqual:@"True"])
+    {
+        return true;
+    }else
+    {
+        return false;
+    }
 }
 
 -(BOOL)getDisuss

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "HYUserLoginModel.h"
 #import "HYBaseViewController.h"
+#import "DrawPatternLockView.h"
 
 @interface DrawPatternLockViewController : HYBaseViewController {
   NSMutableArray* _paths;
@@ -20,6 +21,15 @@
 
 // get key from the pattern drawn
 - (NSString*)getKey;
+
+-(void)forgetPassword;
+-(DrawPatternLockView *)getDraw;
+
+-(void)secondPassword;
+
+-(void)erroPassword;
+-(void)firstPassword;
+-(void)setSetting:(BOOL)flag;
 
 - (void)setTarget:(id)target withAction:(SEL)action;
 

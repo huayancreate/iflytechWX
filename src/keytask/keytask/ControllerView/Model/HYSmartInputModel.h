@@ -13,9 +13,12 @@
 @property NSString *accountName;
 @property NSString *name;
 @property NSString *deptName;
+@property (nonatomic ,strong) UIImageView *imgView;;
 
 -(NSString *)getString;
 
--(UIImageView *)getSelectImg;
+-(UIImageView *)getSelectImg:(int)tag AndTarget:(id)target;
+
+@property NSMutableArray *selectList;
 
 @end

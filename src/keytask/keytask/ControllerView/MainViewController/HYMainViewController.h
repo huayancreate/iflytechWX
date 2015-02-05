@@ -15,5 +15,9 @@
 
 -(void)setItemTag:(int) itemTag;
 -(void)reloadData;
+@property int currentSumMsgCount;
+@property BOOL switchFlag;
+@property BOOL isFirst;
+-(void)removeAllData;
 
 @end

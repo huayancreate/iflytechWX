@@ -10,7 +10,15 @@
 
 @class HYSmartInputViewController;
 @protocol HYSmartInputViewControllerDelegate;
-@interface HYSmartInputViewController : HYBaseViewController<UITableViewDataSource,UITableViewDelegate>
+@interface HYSmartInputViewController : HYBaseViewController<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+
+@property NSString *current;
+@property NSMutableArray *proxyList;
+@property NSMutableArray *partList;
+@property BOOL isFirstManInput;
+@property NSMutableArray *excList;
+@property BOOL isAddPartViewInput;
+@property BOOL isProxyInput;
 
 @end
 

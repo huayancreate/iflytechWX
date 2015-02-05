@@ -14,6 +14,7 @@
 }
 
 
+@property BOOL flag;
 - (void)clearDotViews;
 - (void)addDotView:(UIView*)view;
 - (void)drawLineFromLastDotTo:(CGPoint)pt;

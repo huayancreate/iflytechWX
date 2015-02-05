@@ -531,8 +531,8 @@ CGFloat SVProgressHUDRingThickness = 6;
                                                                                userInfo:notificationUserInfo];
                              
                              // uncomment to make sure UIWindow is gone from app.windows
-                             //NSLog(@"%@", [UIApplication sharedApplication].windows);
-                             //NSLog(@"keyWindow = %@", [UIApplication sharedApplication].keyWindow);
+                             ////NSLog(@"%@", [UIApplication sharedApplication].windows);
+                             ////NSLog(@"keyWindow = %@", [UIApplication sharedApplication].keyWindow);
                          }
                      }];
 }

@@ -19,12 +19,17 @@
     
     BOOL headerRefreshing;
     BOOL footerRefreshing;
+    
+    
+    int _lastPosition;
 }
 
-@synthesize shouldShowDragHeader, shouldShowDragFooter, dragHeaderHeight, dragFooterHeight,dic,user;
+@synthesize shouldShowDragHeader, shouldShowDragFooter, dragHeaderHeight, dragFooterHeight,dic,user,pageCountFlag,flag,ishead;
 
 - (id)initWithFrame:(CGRect)frame showDragRefreshHeader:(BOOL)showDragRefreshHeader showDragRefreshFooter:(BOOL)showDragRefreshFooter
 {
+    pageCountFlag = NO;
+    flag = NO;
     self = [self initWithFrame:frame];
     if (self)
     {
@@ -113,6 +118,7 @@
     HYTaskModel *model = [dic objectAtIndex:indexPath.row];
     [messageView setTitle:@""];
     messageView.taskModel = model;
+    self.user.isLogin = true;
     messageView.user = self.user;
     [[HYHelper getNavigationController] pushController:messageView];
 }
@@ -151,12 +157,9 @@
         }
     }
     
-    if (self.shouldShowDragFooter && dragFooterView)
+    if (self.shouldShowDragFooter && dragFooterView && !pageCountFlag)
     {
-        NSLog(@"scrollView.contentOffset.y = %.2f",scrollView.contentOffset.y);
-        NSLog(@"scrollView.contentSize.height = %.2f",scrollView.contentSize.height);
         CGFloat scrollPosition = scrollView.contentSize.height - scrollView.frame.size.height - scrollView.contentOffset.y;
-        NSLog(@"scrollPosition = %.2f",scrollPosition);
         if(scrollView.contentSize.height > scrollView.frame.size.height)
         {
             if (dragFooterView.state == kPull2RefreshViewStateDragToRefresh
@@ -179,7 +182,26 @@
             }
         }
     }
-
+//    if(pageCountFlag)
+//    {
+//        Pull2RefreshView *dragView = nil;
+//        if (headerRefreshing)
+//        {
+//            dragView = dragHeaderView;
+//        }
+//        else if (footerRefreshing)
+//        {
+//            dragView.pageCountflag = pageCountFlag;
+//            dragView = dragFooterView;
+//        }
+//        
+//        if(dragView == dragFooterView)
+//        {
+//            dragView.pageCountflag = pageCountFlag;
+//            [dragView setState:kPull2RefreshViewStateDragToRefresh];
+//        }
+//    }
+//    [self completeDragRefresh];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
@@ -187,6 +209,9 @@
     //拉动足够距离，松开后，状态变更为“加载中...”
     if (self.shouldShowDragHeader && dragHeaderView)
     {
+        //NSLog(@"scrollView.contentOffset.y = %f",scrollView.contentOffset.y);
+        //NSLog(@"self.dragHeaderHeight = %f",self.dragHeaderHeight);
+        //NSLog(@"headerRefreshing = %d", headerRefreshing);
         if (dragHeaderView.state == kPull2RefreshViewStateLooseToRefresh
             && scrollView.contentOffset.y < -self.dragHeaderHeight - 10.0f
             && !headerRefreshing
@@ -199,7 +224,7 @@
         }
     }
     
-    if(self.shouldShowDragFooter && dragFooterView && dragFooterView.state == kPull2RefreshViewStateLooseToRefresh && !footerRefreshing)
+    if(self.shouldShowDragFooter && dragFooterView && dragFooterView.state == kPull2RefreshViewStateLooseToRefresh && !footerRefreshing && !pageCountFlag)
     {
         footerRefreshing = YES;
         [dragFooterView setState:kPull2RefreshViewStateRefreshing];
@@ -218,6 +243,14 @@
     }
 }
 
+-(void)setSatues
+{
+    dragFooterView.pageCountflag = pageCountFlag;
+    dragFooterView.flag = flag;
+    [dragFooterView setState:kPull2RefreshViewStateDragToRefresh];
+    [self completeDragRefresh];
+}
+
 #pragma mark - Other
 - (void)completeDragRefresh
 {
@@ -228,11 +261,15 @@
     }
     else if (footerRefreshing)
     {
+        dragView.pageCountflag = pageCountFlag;
+        dragView.flag = flag;
         dragView = dragFooterView;
     }
     
     if(dragView == dragFooterView)
     {
+        dragView.pageCountflag = pageCountFlag;
+        dragView.flag = flag;
         [dragView setState:kPull2RefreshViewStateDragToRefresh];
     }
     

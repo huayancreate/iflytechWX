@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UILabel *taskNameView;
 @property (nonatomic, strong) UILabel *lastInfoView;
 @property (nonatomic, strong) UILabel *lastDateView;
+@property (nonatomic, strong) UIImageView *messageCount;
 @property HYTaskModel *model;
 
 -(void)initControl;

@@ -20,6 +20,11 @@
 @synthesize _leftButtonImg;
 @synthesize _stock;
 
+-(NSArray *)getStock
+{
+    return _stock;
+}
+
 -(void)removeAll
 {
     [_stock removeAllObjects];

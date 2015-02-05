@@ -21,9 +21,12 @@
 }
 
 @synthesize state;
+@synthesize pageCountflag;
+@synthesize flag;
 
 - (id)initWithFrame:(CGRect)frame  type:(Pull2RefreshViewType)type
 {
+    pageCountflag = NO;
     self = [super initWithFrame:frame];
     if (self)
     {
@@ -142,7 +145,13 @@
                     hintLabel.text = @"下拉可以刷新";
                     break;
                 case kPull2RefreshViewTypeFooter:
-                    hintLabel.text = @"上拉加载更多";
+                    if(!pageCountflag)
+                    {
+                        hintLabel.text = @"上拉加载更多";
+                    }else
+                    {
+                        hintLabel.text = @"已经没有历史数据了!";
+                    }
                     break;
             }
             

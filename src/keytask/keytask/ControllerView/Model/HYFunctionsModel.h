@@ -21,5 +21,6 @@
 -(NSArray *)getIcons;
 -(NSArray *)getShowNames;
 -(BOOL)getDisuss;
+-(BOOL)getEdit;
 
 @end

@@ -10,12 +10,17 @@
 #import "HYTabItemModel.h"
 #import "HYTabItemView.h"
 #import "HYHelper.h"
+#import "HYImageFactory.h"
+#import "HYConstants.h"
+#import "HYScreenTools.h"
 
 @interface HYTabItemController()
 @property (nonatomic, strong) HYTabItemModel *_model;
 @property (nonatomic, strong) HYTabItemView *_view;
 @property (nonatomic, strong) NSString *_name;
 @property (nonatomic, strong) UIImageView *_showView;
+@property (nonatomic, strong) UIImageView *badgeView;
+@property (nonatomic, strong) NSString *_type;
 
 @end
 
@@ -24,6 +29,19 @@
 @synthesize _model;
 @synthesize _name;
 @synthesize _showView;
+@synthesize badgeView;
+@synthesize _type;
+
+
+-(void)setType:(NSString *)type
+{
+    _type = type;
+}
+
+-(NSString *)getType
+{
+    return _type;
+}
 
 -(void)setName:(NSString *)name
 {
@@ -115,6 +133,35 @@
 
 -(void)setBadgeNumber:(int)number
 {
+    if(number == 0)
+    {
+        if(badgeView != nil)
+        {
+//            [_model setBadgeNumber:number];
+            [badgeView removeFromSuperview];
+            badgeView = nil;
+            return;
+        }else
+        {
+            return;
+        }
+    }
+    if(badgeView != nil)
+    {
+        [badgeView removeFromSuperview];
+    }
+    badgeView = [[UIImageView alloc] initWithFrame:CGRectMake(35, 5, 12, 12)];
+    //        [messageCount setBackgroundColor:[UIColor redColor]];
+    //         messageCount.layer.cornerRadius = 10;
+    [badgeView setImage:[HYImageFactory GetImageByName:@"tabbarred" AndType:PNG]];
+    UILabel *msgLabel = [[UILabel alloc] initWithFrame:CGRectMake(2, 2, 8, 8)];
+    msgLabel.text = [NSString stringWithFormat:@"%d",number];
+    msgLabel.textColor = [UIColor whiteColor];
+    msgLabel.textAlignment = NSTextAlignmentCenter;
+    [msgLabel setFont:[UIFont fontWithName:FONT size:7]];
+    [badgeView addSubview:msgLabel];
+//    [self addSubview:badgeView];
+    [_showView addSubview:badgeView];
     [_model setBadgeNumber:number];
 }
 

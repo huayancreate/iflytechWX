@@ -13,5 +13,12 @@
 @interface HYMessageViewController : HYBaseViewController<UITableViewDelegate,UITableViewDataSource,ChartCellDelegate,UITextFieldDelegate>
 
 @property HYTaskModel *taskModel;
+-(void)getLastRecord;
+-(void)getSendLastRecord;
+-(void)getFunctions;
+@property (nonatomic, strong) NSTimer *connectionTimer;
+@property BOOL isMySend;
+@property BOOL isMySendSuccess;
+@property BOOL isImgFlag;;
 
 @end

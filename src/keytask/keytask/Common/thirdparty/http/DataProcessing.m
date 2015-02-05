@@ -34,7 +34,7 @@ static DataProcessing *instance;
         }
     }
     @catch (NSException *exception) {
-        NSLog(@"exception:%@",exception);
+        //NSLog(@"exception:%@",exception);
     }
     return NO;
 
@@ -54,7 +54,7 @@ static DataProcessing *instance;
             if (parem) {
                 NSArray *array = [parem allKeys];
                 for (int i= 0; i <[array count]; i++) {
-                    NSLog(@"parem %@",[parem objectForKey:[array objectAtIndex:i]]);
+                    //NSLog(@"parem %@",[parem objectForKey:[array objectAtIndex:i]]);
                     [request setPostValue:[parem objectForKey:[array objectAtIndex:i]] forKey:[array objectAtIndex:i]];
                 }
                 
@@ -66,7 +66,7 @@ static DataProcessing *instance;
         }
     }
     @catch (NSException *exception) {
-        NSLog(@"exception:%@",exception);
+        //NSLog(@"exception:%@",exception);
     }
     return NO;
     
@@ -82,11 +82,14 @@ static DataProcessing *instance;
             if (parem) {
                 NSArray *array = [parem allKeys];
                 for (int i= 0; i <[array count]; i++) {
-                    NSLog(@"parem %@",[parem objectForKey:[array objectAtIndex:i]]);
+                    //NSLog(@"parem %@",[parem objectForKey:[array objectAtIndex:i]]);
                     [request setPostValue:[parem objectForKey:[array objectAtIndex:i]] forKey:[array objectAtIndex:i]];
                 }
                 
             }
+            [request setAuthenticationScheme:@"https"];
+            [request setValidatesSecureCertificate:NO];
+            [request setShouldAttemptPersistentConnection:NO];
             [request setPersistentConnectionTimeoutSeconds:15];
             [request setNumberOfTimesToRetryOnTimeout:1];
             [request startAsynchronous];
@@ -94,7 +97,7 @@ static DataProcessing *instance;
         }
     }
     @catch (NSException *exception) {
-        NSLog(@"exception:%@",exception);
+        //NSLog(@"exception:%@",exception);
     }
     return NO;
 
@@ -108,7 +111,7 @@ static DataProcessing *instance;
             if (parem) {
                 NSArray *array = [parem allKeys];
                 for (int i= 0; i <[array count]; i++) {
-                    NSLog(@"parem %@",[parem objectForKey:[array objectAtIndex:i]]);
+                    //NSLog(@"parem %@",[parem objectForKey:[array objectAtIndex:i]]);
                     [request setPostValue:[parem objectForKey:[array objectAtIndex:i]] forKey:[array objectAtIndex:i]];
                 }
                 
@@ -121,7 +124,7 @@ static DataProcessing *instance;
         }
     }
     @catch (NSException *exception) {
-        NSLog(@"exception:%@",exception);
+        //NSLog(@"exception:%@",exception);
     }
     return NO;
     
@@ -144,7 +147,7 @@ static DataProcessing *instance;
                 }
                 
             }
-           //NSLog(@"strUrl:%@",strUrl);
+           ////NSLog(@"strUrl:%@",strUrl);
             NSURL *temurl = [NSURL URLWithString:strUrl];
             if (temurl) {
                 
@@ -171,7 +174,7 @@ static DataProcessing *instance;
         }
     }
     @catch (NSException *exception) {
-         NSLog(@"exception:%@",exception);
+         //NSLog(@"exception:%@",exception);
     }
     return NO;
     
@@ -201,7 +204,7 @@ static DataProcessing *instance;
             }
     }
     @catch (NSException *exception) {
-        NSLog(@"exception:%@",exception);
+        //NSLog(@"exception:%@",exception);
     }
     return NO;
     
@@ -225,9 +228,6 @@ static DataProcessing *instance;
                 NSArray *arrays = [files allKeys];
                 for (int i= 0; i <[arrays count]; i++) {
                     [request addFile:[files objectForKey:[arrays objectAtIndex:i]] forKey:[arrays objectAtIndex:i]];
-//                    [request setFile:[files objectForKey:[arrays objectAtIndex:i]] withFileName:@"small.jpg" andContentType:@"multipart/form-data" forKey:[arrays objectAtIndex:i]];
-                    //[request setData:[files objectForKey:[arrays objectAtIndex:i]] forKey:[arrays objectAtIndex:i]];
-                    
                 }
             }
             [request setRequestMethod:@"POST"];
@@ -240,7 +240,7 @@ static DataProcessing *instance;
 
     }
     @catch (NSException *exception) {
-         NSLog(@"exception:%@",exception);
+         //NSLog(@"exception:%@",exception);
     }
     return NO;
 }
@@ -281,7 +281,7 @@ static DataProcessing *instance;
         
     }
     @catch (NSException *exception) {
-        NSLog(@"exception:%@",exception);
+        //NSLog(@"exception:%@",exception);
     }
     return nil;
 }

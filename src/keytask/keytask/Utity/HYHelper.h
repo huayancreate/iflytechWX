@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "HYNavigationController.h"
+#import "HYUserLoginModel.h"
+#import "DrawPatternLockViewController.h"
+#import "HYAppDelegate.h"
 
 @class HYNavigationController;
 @class HYTabbarController;
@@ -15,6 +18,15 @@
 +(HYNavigationController *)getNavigationController;
 +(HYTabbarController *)getTabbarController;
 +(UIWindow *)getWindow;
++(HYUserLoginModel *)getUser;
++(void)setUser:(HYUserLoginModel *)user;
++(DrawPatternLockViewController *)getLockView;
++(void)setLockView:(DrawPatternLockViewController *)view;
++(HYAppDelegate *)getApp;
++(NSString *)getDownloadURL;
++(void)setDownloadURL:(NSString *)downloadURL;
+
++(NSString *)getRemoteTaskID;
 
 
 @end

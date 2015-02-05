@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HYFileModel.h"
 
 @interface HYRecordModel : NSObject
 @property NSString *taskID;
@@ -20,5 +21,6 @@
 @property NSString *headImg;
 @property NSString *proxy;
 @property NSString *proxyName;
+@property HYFileModel *fileModel;
 
 @end

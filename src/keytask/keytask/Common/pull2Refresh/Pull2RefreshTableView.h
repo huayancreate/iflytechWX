@@ -37,6 +37,11 @@ typedef void(^DragEndBlock)(Pull2RefreshViewType);
 
 //数据加载（或其他操作）完成后调用，重新隐藏刷新view
 - (void)completeDragRefresh;
+- (void)setSatues;
+
+@property BOOL pageCountFlag;
+@property BOOL flag;
+@property BOOL ishead;
 
 
 @end

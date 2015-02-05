@@ -10,12 +10,31 @@
 #import "DrawPatternLockView.h"
 #import "HYImageFactory.h"
 #import "HYConstants.h"
+#import "HYHelper.h"
+#import "HYScreenTools.h"
+#import "HYControlFactory.h"
+#import "HYLoginViewController.h"
+#import "HYHelper.h"
 
 #define MATRIX_SIZE 3
+
+@interface DrawPatternLockViewController()
+{
+    DrawPatternLockView *drawView;
+    UILabel *tipsLabel;
+    UILabel *downTipsLabel;
+    BOOL setting;
+}
+
+@end
 
 @implementation DrawPatternLockViewController
 
 
+-(DrawPatternLockView *)getDraw
+{
+    return drawView;
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -26,18 +45,71 @@
 
 #pragma mark - View lifecycle
 
-- (void)loadView {
-  [super loadView];
-  
-  self.view = [[DrawPatternLockView alloc] init];
+-(void)forgetPassword
+{
+    [tipsLabel removeFromSuperview];
+    [tipsLabel setText:@"忘记密码?"];
+    [drawView addSubview:tipsLabel];
 }
 
+-(void)setSetting:(BOOL)flag
+{
+    setting = flag;
+}
+
+
+-(void)erroPassword
+{
+    [downTipsLabel removeFromSuperview];
+    [downTipsLabel setText:@"再次确认密码错误!"];
+    [drawView addSubview:downTipsLabel];
+}
+
+-(void)firstPassword
+{
+    [downTipsLabel removeFromSuperview];
+    [downTipsLabel setText:@"请输入手势密码!"];
+    [drawView addSubview:downTipsLabel];
+}
+
+-(void)secondPassword
+{
+    [downTipsLabel removeFromSuperview];
+    [downTipsLabel setText:@"请再次确认密码!"];
+    [drawView addSubview:downTipsLabel];
+}
+
+- (void)loadView {
+  [super loadView];
+//    setting = NO;
+    [self.view setFrame:CGRectMake(0, [HYScreenTools getStatusHeight], [HYScreenTools getScreenWidth], [HYScreenTools getScreenHeight] - [HYScreenTools getStatusHeight])];
+    drawView = [[DrawPatternLockView alloc] initWithFrame:CGRectMake(0, [HYScreenTools getStatusHeight], [HYScreenTools getScreenWidth], [HYScreenTools getScreenHeight] - [HYScreenTools getStatusHeight])];
+    [self.view addSubview:drawView];
+    
+    tipsLabel = [HYControlFactory GetLableWithCGRect:CGRectMake(([HYScreenTools getScreenWidth] - 150) /2, [HYScreenTools getScreenHeight] - 60, 150, 30) textfont:[UIFont fontWithName:FONT size:17] text:@"" textColor:[UIColor whiteColor] TextAlignment:NSTextAlignmentCenter];
+    tipsLabel.userInteractionEnabled = YES;
+    [tipsLabel addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(forgetPasswordAction)]];
+    [tipsLabel setText:@"忘记密码?"];
+    
+    
+    downTipsLabel = [HYControlFactory GetLableWithCGRect:CGRectMake(([HYScreenTools getScreenWidth] - 150) /2, 15, 150, 30) textfont:[UIFont fontWithName:FONT size:17] text:@"" textColor:[UIColor whiteColor] TextAlignment:NSTextAlignmentCenter];
+    [downTipsLabel setText:@"请输入手势密码"];
+    [drawView addSubview:downTipsLabel];
+    //    [drawView addSubview:tipsLabel];
+}
+
+-(void)forgetPasswordAction
+{
+    [[[self getNavigationController] getModel] removeAll];
+    HYLoginViewController *loginView = [[HYLoginViewController alloc] init];
+    [[self getNavigationController] pushController:loginView];
+}
 
 - (void)viewDidLoad
 {
   [super viewDidLoad];
   
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[HYImageFactory GetImageByName:@"lock_bg" AndType:PNG]];
+    drawView.backgroundColor = [UIColor colorWithPatternImage:[HYImageFactory GetImageByName:@"lock_bg" AndType:PNG]];
 
   for (int i=0; i<MATRIX_SIZE; i++) {
     for (int j=0; j<MATRIX_SIZE; j++) {
@@ -47,25 +119,43 @@
       imageView.frame = CGRectMake(0, 0, dotImage.size.width, dotImage.size.height);
       imageView.userInteractionEnabled = YES;
       imageView.tag = j*MATRIX_SIZE + i + 1;
-      [self.view addSubview:imageView];
+      [drawView addSubview:imageView];
     }
   }
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[[self getNavigationController] getView] setHidden:YES];
+    [[[self getTabbarController] getView] setHidden:YES];
+    
+    if(!setting)
+    {
+        [drawView addSubview:tipsLabel];
+    }else
+    {
+        [tipsLabel removeFromSuperview];
+    }
+}
+
 
 - (void)viewWillLayoutSubviews {
-  int w = self.view.frame.size.width/MATRIX_SIZE;
-  int h = self.view.frame.size.height/MATRIX_SIZE;
-
-  int i=0;
-  for (UIView *view in self.view.subviews)
-    if ([view isKindOfClass:[UIImageView class]]) {
-      int x = w*(i/MATRIX_SIZE) + w/2;
-      int y = h*(i%MATRIX_SIZE) + h/2;
-      view.center = CGPointMake(x, y);
-      i++;
+    int w = drawView.frame.size.width/MATRIX_SIZE;
+    int h = (drawView.frame.size.height - 140)/MATRIX_SIZE;
+    
+    int i=0;
+    for (UIImageView *view in drawView.subviews)
+    {
+        if ([view isKindOfClass:[UIImageView class]])
+        {
+            int x = w*(i/MATRIX_SIZE) + w/2;
+            int y = h*(i%MATRIX_SIZE) + h/2;
+            y = y + 70;
+            view.center = CGPointMake(x, y);
+            i++;
+        }
     }
-
 }
 
 
@@ -87,14 +177,22 @@
 
 
 - (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
-  CGPoint pt = [[touches anyObject] locationInView:self.view];
-  UIView *touched = [self.view hitTest:pt withEvent:event];
+  CGPoint pt = [[touches anyObject] locationInView:drawView];
+  UIView *touched = [drawView hitTest:pt withEvent:event];
   
-  DrawPatternLockView *v = (DrawPatternLockView*)self.view;
+  if(touched == nil)
+  {
+      return;
+  }
+  DrawPatternLockView *v = (DrawPatternLockView*)drawView;
   [v drawLineFromLastDotTo:pt];
 
-  if (touched!=self.view) {
-    NSLog(@"touched view tag: %d ", touched.tag);
+  if (touched!=drawView) {
+    if(drawView.flag)
+    {
+        return;
+    }
+    //NSLog(@"touched view tag: %d ", touched.tag);
     
     BOOL found = NO;
     for (NSNumber *tag in _paths) {
@@ -118,14 +216,14 @@
 
 - (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
   // clear up hilite
-  DrawPatternLockView *v = (DrawPatternLockView*)self.view;
+  DrawPatternLockView *v = (DrawPatternLockView*)drawView;
   [v clearDotViews];
 
-  for (UIView *view in self.view.subviews)
+  for (UIView *view in drawView.subviews)
     if ([view isKindOfClass:[UIImageView class]])
       [(UIImageView*)view setHighlighted:NO];
   
-  [self.view setNeedsDisplay];
+  [drawView setNeedsDisplay];
   
   // pass the output to target action...
   if (_target && _action)

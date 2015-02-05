@@ -21,8 +21,12 @@
 
 -(HYTabbarView *)getView;
 
+-(NSArray *)getItems;
+
 -(float)getTabbarHeight;
 
 -(void)initItems;
+
+-(void)initItemsBar;
 
 @end

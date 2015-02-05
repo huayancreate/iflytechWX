@@ -31,5 +31,8 @@ typedef enum
 - (void)flipImageAnimated:(BOOL)animated;
 - (void)setCurrentDate;
 
+@property BOOL pageCountflag;
+@property BOOL flag;
+
 
 @end

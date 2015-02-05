@@ -204,7 +204,7 @@
 		//If keyboard is currently showing. Sending a fake notification for keyboardWillShow to adjust view according to keyboard.
 		if (kbShowNotification)	[self keyboardWillShow:kbShowNotification];
 		
-        NSLog(@"Keyboard Manager enabled");
+        //NSLog(@"Keyboard Manager enabled");
     }
 	//If not disable, desable it.
     else if (enable == NO && _enable == YES)
@@ -215,17 +215,17 @@
 		//Setting NO to _enable.
 		_enable = enable;
 		
-        NSLog(@"Keyboard Manager disabled");
+        //NSLog(@"Keyboard Manager disabled");
     }
 	//If already disabled.
 	else if (enable == NO && _enable == NO)
 	{
-		NSLog(@"Keyboard Manger already disabled");
+		//NSLog(@"Keyboard Manger already disabled");
 	}
 	//If already enabled.
 	else if (enable == YES && _enable == YES)
 	{
-        NSLog(@"Keyboard Manager already enabled");
+        //NSLog(@"Keyboard Manager already enabled");
 	}
 }
 
@@ -256,7 +256,7 @@
     UIViewController *controller = [[self keyWindow] topMostController];
     
     //  If can't get rootViewController then printing warning to user.
-    if (controller == nil)  NSLog(@"You must set UIWindow.rootViewController in your AppDelegate to work with IQKeyboardManager");
+    if (controller == nil)  //NSLog(@"You must set UIWindow.rootViewController in your AppDelegate to work with IQKeyboardManager");
     
     [UIView animateWithDuration:animationDuration delay:0 options:(animationCurve|UIViewAnimationOptionBeginFromCurrentState) animations:^{
         //  Setting it's new frame

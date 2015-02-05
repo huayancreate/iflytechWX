@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UIImage *_backgroudImg;
 @property (nonatomic, strong) UIImage *_rightButtonImg;
 @property (nonatomic, strong) UIImage *_leftButtonImg;
+-(NSArray *)getStock;
 -(void)push:(HYBaseViewController *) controller;
 -(void)pop:(HYBaseViewController *) controller;
 -(int)getCount;

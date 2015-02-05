@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
 	<key>isLogin</key>
-	<false/>
+	<string>0</string>
 </dict>
 </plist>

@@ -19,6 +19,7 @@
 @interface ChartContentView : UIView
 @property (nonatomic,strong) UIImageView *backImageView;
 @property (nonatomic,strong) UILabel *contentLabel;
+@property (nonatomic,strong) UIImageView *contentImgView;
 @property (nonatomic,strong) ChartMessage *chartMessage;
 @property (nonatomic,assign) id <ChartContentViewDelegate> delegate;
 @end

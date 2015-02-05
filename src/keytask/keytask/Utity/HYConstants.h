@@ -46,7 +46,7 @@
 
 #define TASK_DETILS @"任务详情"
 
-#define TASK_FORWARDING @"转发"
+#define TASK_FORWARDING @"复制"
 
 #define OK_BUTTON_TEXT @"确   定"
 

@@ -36,6 +36,11 @@
 @synthesize _selectItem;
 @synthesize _lastSelectItem;
 
+-(NSArray *)getItems
+{
+    return _items;
+}
+
 -(HYTabbarView *)getView
 {
     return _view;
@@ -71,6 +76,13 @@
     return _view.frame.size.height;
 }
 
+-(void)initItemsBar
+{
+    [[_items objectAtIndex:0] setSelect:true];
+    _selectItem = [_items objectAtIndex:0];
+    _lastSelectItem = [_items objectAtIndex:0];
+}
+
 -(void)initItems
 {
     assert(_items != nil);
@@ -87,6 +99,8 @@
         {
             [item setSelect:true];
             _selectItem = item;
+            
+            _lastSelectItem = item;
         }else
         {
             [item setSelect:false];
@@ -100,43 +114,57 @@
 -(void)onClickImg:(UIGestureRecognizer *)gestureRecognizer
 {
     UIView *viewClicked = [gestureRecognizer view];
+    //NSLog(@"[_selectItem getShowView].tag = %d,,, viewClicked.tag = %d" , [_selectItem getShowView].tag, viewClicked.tag);
     if([_selectItem getShowView].tag != viewClicked.tag)
     {
         [_lastSelectItem setSelect:NO];
         _lastSelectItem = _selectItem;
         [_selectItem setSelect:NO];
         HYTabItemController *clickItem = [_items objectAtIndex:viewClicked.tag];
-        _selectItem = clickItem;
-        [clickItem setSelect:YES];
         [[HYHelper getNavigationController] setCenterTittle:[clickItem getName]];
         HYNavigationController *nav = [HYHelper getNavigationController];
         HYMainViewController *viewController = [nav getLastModel];
-        if(viewClicked.tag == 0)
+        if(viewController != nil)
         {
-            [viewController setItemTag:TASK_START];
-            [viewController reloadData];
-            return;
-        }
-        if(viewClicked.tag == 1)
-        {
-            [viewController setItemTag:TASK_EXC];
-            [viewController reloadData];
-            return;
-        }
-        if(viewClicked.tag == 2)
-        {
-            [viewController setItemTag:TASK_JOIN];
-            [viewController reloadData];
-            return;
-        }
-        if(viewClicked.tag == 3)
-        {
-            HYMoreViewController *moreView = [[HYMoreViewController alloc] init];
-            [moreView setTitle:@""];
-            [[HYHelper getNavigationController] pushController:moreView];
-        }else
-        {
-            [viewController reloadData];
+            
+            viewController.isFirst = NO;
+            [viewController removeAllData];
+            if(viewClicked.tag != 3)
+            {
+                _selectItem = clickItem;
+                [clickItem setSelect:YES];
+            }
+            if(viewClicked.tag == 0)
+            {
+                [viewController setItemTag:TASK_START];
+                viewController.switchFlag = YES;
+                [viewController reloadData];
+                return;
+            }
+            if(viewClicked.tag == 1)
+            {
+                [viewController setItemTag:TASK_EXC];
+                viewController.switchFlag = YES;
+                [viewController reloadData];
+                return;
+            }
+            if(viewClicked.tag == 2)
+            {
+                [viewController setItemTag:TASK_JOIN];
+                viewController.switchFlag = YES;
+                [viewController reloadData];
+                return;
+            }
+            if(viewClicked.tag == 3)
+            {
+                HYMoreViewController *moreView = [[HYMoreViewController alloc] init];
+                moreView.user = [HYHelper getUser];
+                [moreView setTitle:@""];
+                [[HYHelper getNavigationController] pushController:moreView];
+            }else
+            {
+                [viewController reloadData];
+            }
         }
     }
 }

@@ -7,13 +7,27 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "HYMyProxyModel.h"
 
 @interface HYUserLoginModel : NSObject
 
 @property NSString *accountName;
+@property NSString *password;
 @property NSString *token;
 @property NSString *headImg;
 @property NSString *username;
 @property NSMutableArray *selectList;
+@property NSMutableArray *selectPartList;
+@property NSString *lastTimeHeadImg;
+@property NSMutableArray *partList;
+@property NSMutableArray *excList;
+@property NSString *endTimeString;
+@property NSString *executorString;
+@property NSString *paticrpantString;
+@property NSMutableArray *isAddPartViewList;
+@property NSMutableArray *proxyList;
+@property BOOL isNew;
+@property HYMyProxyModel *helpModel;
+@property BOOL isLogin;
 
 @end

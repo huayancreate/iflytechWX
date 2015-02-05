@@ -10,9 +10,14 @@
 #import "HYTaskModel.h"
 #import "HYDatePickerViewController.h"
 #import "HYSmartInputViewController.h"
+#import "HYMyProxyModel.h"
 
 @interface HYNewTaskViewController : HYBaseViewController<UIScrollViewDelegate,HYDatePickerViewControllerDelegate,UIAlertViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate,HYSmartInputViewControllerDelegate>
 
 @property HYTaskModel *model;
+@property BOOL isForwarding;
+@property BOOL isEdit;
+@property HYMyProxyModel *helpModel;
+@property BOOL isInformation;
 
 @end

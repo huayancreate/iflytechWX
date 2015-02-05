@@ -22,7 +22,7 @@
 @synthesize ID;
 @synthesize endTime;
 @synthesize status;
-@synthesize operateList;
+//@synthesize operateList;
 @synthesize functions;
 @synthesize recordList;
 @synthesize paticrpant;
@@ -32,6 +32,8 @@
 @synthesize days;
 @synthesize product;
 @synthesize description;
+@synthesize messageCount;
+@synthesize lastOperateInfo;
 
 
 -(NSString *)getImgName
@@ -55,7 +57,7 @@
     if([status  isEqual: @"104"])
     {
         //TODO 缺失
-        imgName = @"progress";
+        imgName = @"104status";
     }
     if([status  isEqual: @"105"])
     {
@@ -74,18 +76,11 @@
 
 -(NSString *)getLastInfo
 {
-    if([operateList count] <= 0)
+    if(lastOperateInfo == nil)
     {
         return @"";
-    }else
-    {
-        HYTaskOperateModel *opModel = [operateList lastObject];
-        lastInfo = @"";
-        lastInfo = [lastInfo stringByAppendingString:opModel.username];
-        lastInfo = [lastInfo stringByAppendingString:@":"];
-        lastInfo = [lastInfo stringByAppendingString:opModel.operate];
-        return lastInfo;
     }
+    return lastOperateInfo;
 }
 
 -(NSString *)getLastTime

@@ -14,6 +14,7 @@
 @property float _itemWidth;
 @property int _index;
 @property BOOL _select;
+@property int _badgeNumber;
 
 
 @end
@@ -24,6 +25,7 @@
 @synthesize _itemWidth;
 @synthesize _index;
 @synthesize _select;
+@synthesize _badgeNumber;
 
 -(void)setSelect:(BOOL)select
 {
@@ -33,6 +35,11 @@
 -(BOOL)isSelect
 {
     return _select;
+}
+
+-(void)setBadgeNumber:(int)number
+{
+    _badgeNumber = number;
 }
 
 -(void)setIndex:(int)index

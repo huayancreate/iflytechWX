@@ -10,5 +10,9 @@
 
 @interface HYLoginViewController : HYBaseViewController
 
+-(void)loginAction:(NSString *)username AndPassword:(NSString *)password;
+
+@property BOOL isLogin;
+
 
 @end
